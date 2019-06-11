@@ -2,32 +2,32 @@ version: "3"
 
 services:
   webserver:
-    build: 
+    build:
       context: ./bin/webserver
-    container_name: 'foa-7.1.x-webserver'
+    container_name: 'kibo-7.1.x-webserver'
     ports:
       - "80:80"
       - "443:443"
-    links: 
+    links:
       - mysql
-    volumes: 
+    volumes:
       - ${DOCUMENT_ROOT-./www}:/var/www/html
       - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
       - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
       - ${LOG_DIR-./logs/apache2}:/var/log/apache2
   mysql:
     build: ./bin/mysql
-    container_name: 'foa-5.7-mysql'
+    container_name: 'kibo-5.7-mysql'
     ports:
       - "3306:3306"
-    volumes: 
+    volumes:
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
       - ${MYSQL_LOG_DIR-./logs/mysql}:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: 'foa-sc-phpmyadmin'
+    container_name: 'kibo-sc-phpmyadmin'
     links:
       - mysql
     environment:
@@ -35,10 +35,10 @@ services:
       PMA_PORT: 3306
     ports:
       - '8080:80'
-    volumes: 
+    volumes:
       - /sessions
   redis:
-    container_name: 'foa-sc-redis'
+    container_name: 'kibo-sc-redis'
     image: redis:latest
     ports:
       - "6379:6379"
