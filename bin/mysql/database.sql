@@ -1,11 +1,11 @@
 ﻿-- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: mysql:3306
--- Tiempo de generación: 11-06-2019 a las 17:52:57
--- Versión del servidor: 5.7.26
--- Versión de PHP: 7.2.14
+-- Host: mysql:3306
+-- Generation Time: Jun 11, 2019 at 10:44 PM
+-- Server version: 5.7.25
+-- PHP Version: 7.2.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `kibo`
+-- Database: `kibo`
 --
 CREATE DATABASE IF NOT EXISTS `kibo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `kibo`;
@@ -27,7 +27,7 @@ USE `kibo`;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_commentmeta`
+-- Table structure for table `kibo_commentmeta`
 --
 
 DROP TABLE IF EXISTS `kibo_commentmeta`;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `kibo_commentmeta` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_comments`
+-- Table structure for table `kibo_comments`
 --
 
 DROP TABLE IF EXISTS `kibo_comments`;
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `kibo_comments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_comments`
+-- Dumping data for table `kibo_comments`
 --
 
 INSERT INTO `kibo_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
@@ -82,7 +82,7 @@ INSERT INTO `kibo_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_links`
+-- Table structure for table `kibo_links`
 --
 
 DROP TABLE IF EXISTS `kibo_links`;
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `kibo_links` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_options`
+-- Table structure for table `kibo_options`
 --
 
 DROP TABLE IF EXISTS `kibo_options`;
@@ -118,10 +118,10 @@ CREATE TABLE IF NOT EXISTS `kibo_options` (
   `autoload` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=148 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_options`
+-- Dumping data for table `kibo_options`
 --
 
 INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
@@ -157,7 +157,7 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (30, 'hack_file', '0', 'yes'),
 (31, 'blog_charset', 'UTF-8', 'yes'),
 (32, 'moderation_keys', '', 'no'),
-(33, 'active_plugins', 'a:0:{}', 'yes'),
+(33, 'active_plugins', 'a:2:{i:0;s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";i:1;s:34:\"advanced-custom-fields-pro/acf.php\";}', 'yes'),
 (34, 'category_base', '', 'yes'),
 (35, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (36, 'comment_max_links', '2', 'yes'),
@@ -227,7 +227,7 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (100, 'widget_archives', 'a:2:{i:2;a:3:{s:5:\"title\";s:0:\"\";s:5:\"count\";i:0;s:8:\"dropdown\";i:0;}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (101, 'widget_meta', 'a:2:{i:2;a:1:{s:5:\"title\";s:0:\"\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (102, 'sidebars_widgets', 'a:4:{s:19:\"wp_inactive_widgets\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:13:\"widget-area-1\";a:0:{}s:13:\"widget-area-2\";a:0:{}s:13:\"array_version\";i:3;}', 'yes'),
-(103, 'cron', 'a:6:{i:1560277272;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1560309672;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1560352871;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352919;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352922;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(103, 'cron', 'a:7:{i:1560295272;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1560296369;a:1:{s:26:\"upgrader_scheduled_cleanup\";a:1:{s:32:\"c9059feef497c200e69cb9956a81f005\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:1:{i:0;i:5;}}}}i:1560309672;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1560352871;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352919;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352922;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (104, 'widget_pages', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (105, 'widget_calendar', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (106, 'widget_media_audio', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -239,9 +239,6 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (112, 'widget_custom_html', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (114, 'recovery_keys', 'a:0:{}', 'yes'),
 (116, 'theme_mods_twentynineteen', 'a:2:{s:18:\"custom_css_post_id\";i:-1;s:16:\"sidebars_widgets\";a:2:{s:4:\"time\";i:1560275108;s:4:\"data\";a:2:{s:19:\"wp_inactive_widgets\";a:0:{}s:9:\"sidebar-1\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}}}}', 'yes'),
-(122, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/es_ES/wordpress-5.2.1.zip\";s:6:\"locale\";s:5:\"es_ES\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/es_ES/wordpress-5.2.1.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.2.1\";s:7:\"version\";s:5:\"5.2.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.0\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1560266479;s:15:\"version_checked\";s:5:\"5.2.1\";s:12:\"translations\";a:0:{}}', 'no'),
-(123, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1560275158;s:7:\"checked\";a:1:{s:8:\"no-front\";s:3:\"1.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
-(124, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1560266480;s:7:\"checked\";a:2:{s:19:\"akismet/akismet.php\";s:5:\"4.1.2\";s:9:\"hello.php\";s:5:\"1.7.2\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:2:{s:19:\"akismet/akismet.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:21:\"w.org/plugins/akismet\";s:4:\"slug\";s:7:\"akismet\";s:6:\"plugin\";s:19:\"akismet/akismet.php\";s:11:\"new_version\";s:5:\"4.1.2\";s:3:\"url\";s:38:\"https://wordpress.org/plugins/akismet/\";s:7:\"package\";s:56:\"https://downloads.wordpress.org/plugin/akismet.4.1.2.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:59:\"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272\";s:2:\"1x\";s:59:\"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:61:\"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904\";}s:11:\"banners_rtl\";a:0:{}}s:9:\"hello.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/hello-dolly\";s:4:\"slug\";s:11:\"hello-dolly\";s:6:\"plugin\";s:9:\"hello.php\";s:11:\"new_version\";s:5:\"1.7.2\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/hello-dolly/\";s:7:\"package\";s:60:\"https://downloads.wordpress.org/plugin/hello-dolly.1.7.2.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:64:\"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=2052855\";s:2:\"1x\";s:64:\"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=2052855\";}s:7:\"banners\";a:1:{s:2:\"1x\";s:66:\"https://ps.w.org/hello-dolly/assets/banner-772x250.jpg?rev=2052855\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
 (125, '_site_transient_timeout_browser_3193f38d3ec163ef29fec8f0c31c869d', '1560871319', 'no'),
 (126, '_site_transient_browser_3193f38d3ec163ef29fec8f0c31c869d', 'a:10:{s:4:\"name\";s:5:\"Opera\";s:7:\"version\";s:13:\"60.0.3255.160\";s:8:\"platform\";s:9:\"Macintosh\";s:10:\"update_url\";s:22:\"https://www.opera.com/\";s:7:\"img_src\";s:42:\"http://s.w.org/images/browsers/opera.png?1\";s:11:\"img_src_ssl\";s:43:\"https://s.w.org/images/browsers/opera.png?1\";s:15:\"current_version\";s:5:\"12.18\";s:7:\"upgrade\";b:0;s:8:\"insecure\";b:0;s:6:\"mobile\";b:0;}', 'no'),
 (127, '_site_transient_timeout_php_check_1d5ece82c6431f7e2186fe51280fa8af', '1560871322', 'no'),
@@ -263,16 +260,29 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (140, '_transient_feed_mod_d117b5738fbd35bd8c0391cda1f2b5d9', '1560266528', 'no'),
 (141, '_transient_timeout_dash_v2_c05853b002c443ec8e57ff884f56cdde', '1560309728', 'no'),
 (142, '_transient_dash_v2_c05853b002c443ec8e57ff884f56cdde', '<div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'https://es.wordpress.org/2019/06/08/meetups-del-mes-de-junio/\'>Meetups del mes de junio</a></li></ul></div><div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'https://wptavern.com/former-npm-inc-cto-announces-entropic-a-decentralized-package-registry\'>WPTavern: Former npm, Inc. CTO Announces Entropic, a Decentralized Package Registry</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/buddypress-5-0-to-update-password-control-to-match-wordpress\'>WPTavern: BuddyPress 5.0 to Update Password Control to Match WordPress</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/in-case-you-missed-it-issue-25\'>WPTavern: In Case You Missed It – Issue 25</a></li></ul></div>', 'no'),
-(143, '_site_transient_timeout_theme_roots', '1560276880', 'no'),
-(144, '_site_transient_theme_roots', 'a:1:{s:8:\"no-front\";s:7:\"/themes\";}', 'no'),
 (145, 'current_theme', 'No Front', 'yes'),
 (146, 'theme_mods_no-front', 'a:2:{i:0;b:0;s:18:\"nav_menu_locations\";a:0:{}}', 'yes'),
-(147, 'theme_switched', '', 'yes');
+(147, 'theme_switched', '', 'yes'),
+(149, '_site_transient_timeout_community-events-7e67ab6dfbbf1b0e5c897d37a41683a1', '1560332259', 'no'),
+(150, '_site_transient_community-events-7e67ab6dfbbf1b0e5c897d37a41683a1', 'a:2:{s:8:\"location\";a:1:{s:2:\"ip\";s:13:\"192.168.144.0\";}s:6:\"events\";a:5:{i:0;a:7:{s:4:\"type\";s:8:\"wordcamp\";s:5:\"title\";s:15:\"WordCamp Europe\";s:3:\"url\";s:33:\"https://2019.europe.wordcamp.org/\";s:6:\"meetup\";s:0:\"\";s:10:\"meetup_url\";s:0:\"\";s:4:\"date\";s:19:\"2019-06-20 00:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:15:\"Berlin, Germany\";s:7:\"country\";s:2:\"DE\";s:8:\"latitude\";d:52.50697;s:9:\"longitude\";d:13.2843064;}}i:1;a:7:{s:4:\"type\";s:6:\"meetup\";s:5:\"title\";s:23:\"1.er Hackaton WPGranada\";s:3:\"url\";s:65:\"https://www.meetup.com/Granada-WordPress-Meetup/events/261482045/\";s:6:\"meetup\";s:24:\"Granada WordPress Meetup\";s:10:\"meetup_url\";s:48:\"https://www.meetup.com/Granada-WordPress-Meetup/\";s:4:\"date\";s:19:\"2019-06-12 17:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:14:\"Granada, Spain\";s:7:\"country\";s:2:\"es\";s:8:\"latitude\";d:37.197056;s:9:\"longitude\";d:-3.624551;}}i:2;a:7:{s:4:\"type\";s:6:\"meetup\";s:5:\"title\";s:69:\"Técnicas de conversión para negocios digitales basados en WordPress\";s:3:\"url\";s:57:\"https://www.meetup.com/WordPress-Malaga/events/258812875/\";s:6:\"meetup\";s:17:\"WordPress Málaga\";s:10:\"meetup_url\";s:40:\"https://www.meetup.com/WordPress-Malaga/\";s:4:\"date\";s:19:\"2019-06-27 19:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:14:\"Málaga, Spain\";s:7:\"country\";s:2:\"es\";s:8:\"latitude\";d:36.728634;s:9:\"longitude\";d:-4.431205;}}i:3;a:7:{s:4:\"type\";s:8:\"wordcamp\";s:5:\"title\";s:16:\"WordCamp Sevilla\";s:3:\"url\";s:44:\"https://2019-developers.sevilla.wordcamp.org\";s:6:\"meetup\";N;s:10:\"meetup_url\";N;s:4:\"date\";s:19:\"2019-10-04 00:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:25:\"Seville, Andalusia, Spain\";s:7:\"country\";s:2:\"ES\";s:8:\"latitude\";d:37.3705646;s:9:\"longitude\";d:-5.9912288;}}i:4;a:7:{s:4:\"type\";s:8:\"wordcamp\";s:5:\"title\";s:24:\"WordCamp Valencia, Spain\";s:3:\"url\";s:34:\"https://2019.valencia.wordcamp.org\";s:6:\"meetup\";N;s:10:\"meetup_url\";N;s:4:\"date\";s:19:\"2019-10-19 00:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:15:\"Valencia, Spain\";s:7:\"country\";s:2:\"ES\";s:8:\"latitude\";d:39.475888;s:9:\"longitude\";d:-0.393696;}}}}', 'no'),
+(151, '_transient_timeout_plugin_slugs', '1560377778', 'no'),
+(152, '_transient_plugin_slugs', 'a:2:{i:0;s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";i:1;s:34:\"advanced-custom-fields-pro/acf.php\";}', 'no'),
+(153, 'recently_activated', 'a:0:{}', 'yes'),
+(154, '_site_transient_timeout_poptags_40cd750bba9870f18aada2478b24840a', '1560299960', 'no'),
+(155, '_site_transient_poptags_40cd750bba9870f18aada2478b24840a', 'O:8:\"stdClass\":100:{s:6:\"widget\";a:3:{s:4:\"name\";s:6:\"widget\";s:4:\"slug\";s:6:\"widget\";s:5:\"count\";i:4584;}s:11:\"woocommerce\";a:3:{s:4:\"name\";s:11:\"woocommerce\";s:4:\"slug\";s:11:\"woocommerce\";s:5:\"count\";i:3466;}s:4:\"post\";a:3:{s:4:\"name\";s:4:\"post\";s:4:\"slug\";s:4:\"post\";s:5:\"count\";i:2621;}s:5:\"admin\";a:3:{s:4:\"name\";s:5:\"admin\";s:4:\"slug\";s:5:\"admin\";s:5:\"count\";i:2490;}s:5:\"posts\";a:3:{s:4:\"name\";s:5:\"posts\";s:4:\"slug\";s:5:\"posts\";s:5:\"count\";i:1920;}s:9:\"shortcode\";a:3:{s:4:\"name\";s:9:\"shortcode\";s:4:\"slug\";s:9:\"shortcode\";s:5:\"count\";i:1736;}s:8:\"comments\";a:3:{s:4:\"name\";s:8:\"comments\";s:4:\"slug\";s:8:\"comments\";s:5:\"count\";i:1732;}s:7:\"twitter\";a:3:{s:4:\"name\";s:7:\"twitter\";s:4:\"slug\";s:7:\"twitter\";s:5:\"count\";i:1467;}s:6:\"images\";a:3:{s:4:\"name\";s:6:\"images\";s:4:\"slug\";s:6:\"images\";s:5:\"count\";i:1439;}s:6:\"google\";a:3:{s:4:\"name\";s:6:\"google\";s:4:\"slug\";s:6:\"google\";s:5:\"count\";i:1434;}s:8:\"facebook\";a:3:{s:4:\"name\";s:8:\"facebook\";s:4:\"slug\";s:8:\"facebook\";s:5:\"count\";i:1434;}s:5:\"image\";a:3:{s:4:\"name\";s:5:\"image\";s:4:\"slug\";s:5:\"image\";s:5:\"count\";i:1366;}s:3:\"seo\";a:3:{s:4:\"name\";s:3:\"seo\";s:4:\"slug\";s:3:\"seo\";s:5:\"count\";i:1325;}s:7:\"sidebar\";a:3:{s:4:\"name\";s:7:\"sidebar\";s:4:\"slug\";s:7:\"sidebar\";s:5:\"count\";i:1292;}s:7:\"gallery\";a:3:{s:4:\"name\";s:7:\"gallery\";s:4:\"slug\";s:7:\"gallery\";s:5:\"count\";i:1140;}s:5:\"email\";a:3:{s:4:\"name\";s:5:\"email\";s:4:\"slug\";s:5:\"email\";s:5:\"count\";i:1111;}s:4:\"page\";a:3:{s:4:\"name\";s:4:\"page\";s:4:\"slug\";s:4:\"page\";s:5:\"count\";i:1097;}s:6:\"social\";a:3:{s:4:\"name\";s:6:\"social\";s:4:\"slug\";s:6:\"social\";s:5:\"count\";i:1062;}s:9:\"ecommerce\";a:3:{s:4:\"name\";s:9:\"ecommerce\";s:4:\"slug\";s:9:\"ecommerce\";s:5:\"count\";i:1005;}s:5:\"login\";a:3:{s:4:\"name\";s:5:\"login\";s:4:\"slug\";s:5:\"login\";s:5:\"count\";i:937;}s:5:\"links\";a:3:{s:4:\"name\";s:5:\"links\";s:4:\"slug\";s:5:\"links\";s:5:\"count\";i:853;}s:7:\"widgets\";a:3:{s:4:\"name\";s:7:\"widgets\";s:4:\"slug\";s:7:\"widgets\";s:5:\"count\";i:842;}s:5:\"video\";a:3:{s:4:\"name\";s:5:\"video\";s:4:\"slug\";s:5:\"video\";s:5:\"count\";i:837;}s:8:\"security\";a:3:{s:4:\"name\";s:8:\"security\";s:4:\"slug\";s:8:\"security\";s:5:\"count\";i:794;}s:4:\"spam\";a:3:{s:4:\"name\";s:4:\"spam\";s:4:\"slug\";s:4:\"spam\";s:5:\"count\";i:741;}s:7:\"content\";a:3:{s:4:\"name\";s:7:\"content\";s:4:\"slug\";s:7:\"content\";s:5:\"count\";i:731;}s:10:\"buddypress\";a:3:{s:4:\"name\";s:10:\"buddypress\";s:4:\"slug\";s:10:\"buddypress\";s:5:\"count\";i:728;}s:6:\"slider\";a:3:{s:4:\"name\";s:6:\"slider\";s:4:\"slug\";s:6:\"slider\";s:5:\"count\";i:718;}s:10:\"e-commerce\";a:3:{s:4:\"name\";s:10:\"e-commerce\";s:4:\"slug\";s:10:\"e-commerce\";s:5:\"count\";i:704;}s:3:\"rss\";a:3:{s:4:\"name\";s:3:\"rss\";s:4:\"slug\";s:3:\"rss\";s:5:\"count\";i:700;}s:9:\"analytics\";a:3:{s:4:\"name\";s:9:\"analytics\";s:4:\"slug\";s:9:\"analytics\";s:5:\"count\";i:696;}s:5:\"pages\";a:3:{s:4:\"name\";s:5:\"pages\";s:4:\"slug\";s:5:\"pages\";s:5:\"count\";i:685;}s:5:\"media\";a:3:{s:4:\"name\";s:5:\"media\";s:4:\"slug\";s:5:\"media\";s:5:\"count\";i:672;}s:6:\"search\";a:3:{s:4:\"name\";s:6:\"search\";s:4:\"slug\";s:6:\"search\";s:5:\"count\";i:658;}s:4:\"form\";a:3:{s:4:\"name\";s:4:\"form\";s:4:\"slug\";s:4:\"form\";s:5:\"count\";i:655;}s:6:\"jquery\";a:3:{s:4:\"name\";s:6:\"jquery\";s:4:\"slug\";s:6:\"jquery\";s:5:\"count\";i:652;}s:4:\"feed\";a:3:{s:4:\"name\";s:4:\"feed\";s:4:\"slug\";s:4:\"feed\";s:5:\"count\";i:631;}s:4:\"menu\";a:3:{s:4:\"name\";s:4:\"menu\";s:4:\"slug\";s:4:\"menu\";s:5:\"count\";i:621;}s:8:\"category\";a:3:{s:4:\"name\";s:8:\"category\";s:4:\"slug\";s:8:\"category\";s:5:\"count\";i:620;}s:4:\"ajax\";a:3:{s:4:\"name\";s:4:\"ajax\";s:4:\"slug\";s:4:\"ajax\";s:5:\"count\";i:620;}s:5:\"embed\";a:3:{s:4:\"name\";s:5:\"embed\";s:4:\"slug\";s:5:\"embed\";s:5:\"count\";i:589;}s:6:\"editor\";a:3:{s:4:\"name\";s:6:\"editor\";s:4:\"slug\";s:6:\"editor\";s:5:\"count\";i:582;}s:10:\"javascript\";a:3:{s:4:\"name\";s:10:\"javascript\";s:4:\"slug\";s:10:\"javascript\";s:5:\"count\";i:570;}s:3:\"css\";a:3:{s:4:\"name\";s:3:\"css\";s:4:\"slug\";s:3:\"css\";s:5:\"count\";i:564;}s:4:\"link\";a:3:{s:4:\"name\";s:4:\"link\";s:4:\"slug\";s:4:\"link\";s:5:\"count\";i:561;}s:7:\"youtube\";a:3:{s:4:\"name\";s:7:\"youtube\";s:4:\"slug\";s:7:\"youtube\";s:5:\"count\";i:555;}s:12:\"contact-form\";a:3:{s:4:\"name\";s:12:\"contact form\";s:4:\"slug\";s:12:\"contact-form\";s:5:\"count\";i:544;}s:5:\"share\";a:3:{s:4:\"name\";s:5:\"share\";s:4:\"slug\";s:5:\"share\";s:5:\"count\";i:541;}s:5:\"theme\";a:3:{s:4:\"name\";s:5:\"theme\";s:4:\"slug\";s:5:\"theme\";s:5:\"count\";i:533;}s:7:\"comment\";a:3:{s:4:\"name\";s:7:\"comment\";s:4:\"slug\";s:7:\"comment\";s:5:\"count\";i:527;}s:10:\"responsive\";a:3:{s:4:\"name\";s:10:\"responsive\";s:4:\"slug\";s:10:\"responsive\";s:5:\"count\";i:525;}s:9:\"dashboard\";a:3:{s:4:\"name\";s:9:\"dashboard\";s:4:\"slug\";s:9:\"dashboard\";s:5:\"count\";i:515;}s:6:\"custom\";a:3:{s:4:\"name\";s:6:\"custom\";s:4:\"slug\";s:6:\"custom\";s:5:\"count\";i:512;}s:9:\"affiliate\";a:3:{s:4:\"name\";s:9:\"affiliate\";s:4:\"slug\";s:9:\"affiliate\";s:5:\"count\";i:506;}s:3:\"ads\";a:3:{s:4:\"name\";s:3:\"ads\";s:4:\"slug\";s:3:\"ads\";s:5:\"count\";i:503;}s:10:\"categories\";a:3:{s:4:\"name\";s:10:\"categories\";s:4:\"slug\";s:10:\"categories\";s:5:\"count\";i:497;}s:7:\"payment\";a:3:{s:4:\"name\";s:7:\"payment\";s:4:\"slug\";s:7:\"payment\";s:5:\"count\";i:488;}s:4:\"tags\";a:3:{s:4:\"name\";s:4:\"tags\";s:4:\"slug\";s:4:\"tags\";s:5:\"count\";i:477;}s:6:\"button\";a:3:{s:4:\"name\";s:6:\"button\";s:4:\"slug\";s:6:\"button\";s:5:\"count\";i:477;}s:7:\"contact\";a:3:{s:4:\"name\";s:7:\"contact\";s:4:\"slug\";s:7:\"contact\";s:5:\"count\";i:472;}s:4:\"user\";a:3:{s:4:\"name\";s:4:\"user\";s:4:\"slug\";s:4:\"user\";s:5:\"count\";i:469;}s:3:\"api\";a:3:{s:4:\"name\";s:3:\"api\";s:4:\"slug\";s:3:\"api\";s:5:\"count\";i:467;}s:6:\"mobile\";a:3:{s:4:\"name\";s:6:\"mobile\";s:4:\"slug\";s:6:\"mobile\";s:5:\"count\";i:458;}s:5:\"users\";a:3:{s:4:\"name\";s:5:\"users\";s:4:\"slug\";s:5:\"users\";s:5:\"count\";i:453;}s:6:\"events\";a:3:{s:4:\"name\";s:6:\"events\";s:4:\"slug\";s:6:\"events\";s:5:\"count\";i:435;}s:5:\"photo\";a:3:{s:4:\"name\";s:5:\"photo\";s:4:\"slug\";s:5:\"photo\";s:5:\"count\";i:430;}s:15:\"payment-gateway\";a:3:{s:4:\"name\";s:15:\"payment gateway\";s:4:\"slug\";s:15:\"payment-gateway\";s:5:\"count\";i:421;}s:9:\"slideshow\";a:3:{s:4:\"name\";s:9:\"slideshow\";s:4:\"slug\";s:9:\"slideshow\";s:5:\"count\";i:421;}s:6:\"photos\";a:3:{s:4:\"name\";s:6:\"photos\";s:4:\"slug\";s:6:\"photos\";s:5:\"count\";i:417;}s:5:\"stats\";a:3:{s:4:\"name\";s:5:\"stats\";s:4:\"slug\";s:5:\"stats\";s:5:\"count\";i:415;}s:10:\"navigation\";a:3:{s:4:\"name\";s:10:\"navigation\";s:4:\"slug\";s:10:\"navigation\";s:5:\"count\";i:408;}s:10:\"statistics\";a:3:{s:4:\"name\";s:10:\"statistics\";s:4:\"slug\";s:10:\"statistics\";s:5:\"count\";i:398;}s:8:\"calendar\";a:3:{s:4:\"name\";s:8:\"calendar\";s:4:\"slug\";s:8:\"calendar\";s:5:\"count\";i:397;}s:9:\"marketing\";a:3:{s:4:\"name\";s:9:\"marketing\";s:4:\"slug\";s:9:\"marketing\";s:5:\"count\";i:395;}s:4:\"chat\";a:3:{s:4:\"name\";s:4:\"chat\";s:4:\"slug\";s:4:\"chat\";s:5:\"count\";i:394;}s:5:\"popup\";a:3:{s:4:\"name\";s:5:\"popup\";s:4:\"slug\";s:5:\"popup\";s:5:\"count\";i:387;}s:4:\"news\";a:3:{s:4:\"name\";s:4:\"news\";s:4:\"slug\";s:4:\"news\";s:5:\"count\";i:383;}s:10:\"shortcodes\";a:3:{s:4:\"name\";s:10:\"shortcodes\";s:4:\"slug\";s:10:\"shortcodes\";s:5:\"count\";i:382;}s:10:\"newsletter\";a:3:{s:4:\"name\";s:10:\"newsletter\";s:4:\"slug\";s:10:\"newsletter\";s:5:\"count\";i:378;}s:12:\"social-media\";a:3:{s:4:\"name\";s:12:\"social media\";s:4:\"slug\";s:12:\"social-media\";s:5:\"count\";i:370;}s:5:\"forms\";a:3:{s:4:\"name\";s:5:\"forms\";s:4:\"slug\";s:5:\"forms\";s:5:\"count\";i:364;}s:7:\"plugins\";a:3:{s:4:\"name\";s:7:\"plugins\";s:4:\"slug\";s:7:\"plugins\";s:5:\"count\";i:361;}s:4:\"code\";a:3:{s:4:\"name\";s:4:\"code\";s:4:\"slug\";s:4:\"code\";s:5:\"count\";i:360;}s:3:\"url\";a:3:{s:4:\"name\";s:3:\"url\";s:4:\"slug\";s:3:\"url\";s:5:\"count\";i:354;}s:9:\"multisite\";a:3:{s:4:\"name\";s:9:\"multisite\";s:4:\"slug\";s:9:\"multisite\";s:5:\"count\";i:353;}s:4:\"meta\";a:3:{s:4:\"name\";s:4:\"meta\";s:4:\"slug\";s:4:\"meta\";s:5:\"count\";i:349;}s:8:\"redirect\";a:3:{s:4:\"name\";s:8:\"redirect\";s:4:\"slug\";s:8:\"redirect\";s:5:\"count\";i:348;}s:4:\"list\";a:3:{s:4:\"name\";s:4:\"list\";s:4:\"slug\";s:4:\"list\";s:5:\"count\";i:346;}s:14:\"contact-form-7\";a:3:{s:4:\"name\";s:14:\"contact form 7\";s:4:\"slug\";s:14:\"contact-form-7\";s:5:\"count\";i:345;}s:9:\"gutenberg\";a:3:{s:4:\"name\";s:9:\"gutenberg\";s:4:\"slug\";s:9:\"gutenberg\";s:5:\"count\";i:342;}s:11:\"performance\";a:3:{s:4:\"name\";s:11:\"performance\";s:4:\"slug\";s:11:\"performance\";s:5:\"count\";i:332;}s:12:\"notification\";a:3:{s:4:\"name\";s:12:\"notification\";s:4:\"slug\";s:12:\"notification\";s:5:\"count\";i:327;}s:11:\"advertising\";a:3:{s:4:\"name\";s:11:\"advertising\";s:4:\"slug\";s:11:\"advertising\";s:5:\"count\";i:323;}s:16:\"custom-post-type\";a:3:{s:4:\"name\";s:16:\"custom post type\";s:4:\"slug\";s:16:\"custom-post-type\";s:5:\"count\";i:321;}s:16:\"google-analytics\";a:3:{s:4:\"name\";s:16:\"google analytics\";s:4:\"slug\";s:16:\"google-analytics\";s:5:\"count\";i:318;}s:8:\"tracking\";a:3:{s:4:\"name\";s:8:\"tracking\";s:4:\"slug\";s:8:\"tracking\";s:5:\"count\";i:316;}s:6:\"simple\";a:3:{s:4:\"name\";s:6:\"simple\";s:4:\"slug\";s:6:\"simple\";s:5:\"count\";i:316;}s:4:\"html\";a:3:{s:4:\"name\";s:4:\"html\";s:4:\"slug\";s:4:\"html\";s:5:\"count\";i:311;}s:6:\"author\";a:3:{s:4:\"name\";s:6:\"author\";s:4:\"slug\";s:6:\"author\";s:5:\"count\";i:310;}s:7:\"adsense\";a:3:{s:4:\"name\";s:7:\"adsense\";s:4:\"slug\";s:7:\"adsense\";s:5:\"count\";i:310;}}', 'no'),
+(156, '_site_transient_timeout_theme_roots', '1560290969', 'no'),
+(157, '_site_transient_theme_roots', 'a:1:{s:8:\"no-front\";s:7:\"/themes\";}', 'no'),
+(159, 'acf_version', '5.8.0', 'yes'),
+(160, '_site_transient_update_core', 'O:8:\"stdClass\":3:{s:7:\"updates\";a:0:{}s:15:\"version_checked\";s:5:\"5.2.1\";s:12:\"last_checked\";i:1560289474;}', 'no'),
+(161, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1560291370;s:7:\"checked\";a:2:{s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";s:5:\"3.1.0\";s:34:\"advanced-custom-fields-pro/acf.php\";s:5:\"5.8.0\";}s:8:\"response\";a:1:{s:34:\"advanced-custom-fields-pro/acf.php\";O:8:\"stdClass\":8:{s:4:\"slug\";s:26:\"advanced-custom-fields-pro\";s:6:\"plugin\";s:34:\"advanced-custom-fields-pro/acf.php\";s:11:\"new_version\";s:5:\"5.8.1\";s:3:\"url\";s:36:\"https://www.advancedcustomfields.com\";s:6:\"tested\";s:3:\"5.2\";s:7:\"package\";s:0:\"\";s:5:\"icons\";a:1:{s:7:\"default\";s:63:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png\";}s:7:\"banners\";a:1:{s:7:\"default\";s:66:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg\";}}}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:1:{s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:29:\"w.org/plugins/acf-to-rest-api\";s:4:\"slug\";s:15:\"acf-to-rest-api\";s:6:\"plugin\";s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";s:11:\"new_version\";s:5:\"3.1.0\";s:3:\"url\";s:46:\"https://wordpress.org/plugins/acf-to-rest-api/\";s:7:\"package\";s:64:\"https://downloads.wordpress.org/plugin/acf-to-rest-api.3.1.0.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:68:\"https://ps.w.org/acf-to-rest-api/assets/icon-256x256.jpg?rev=1752896\";s:2:\"1x\";s:68:\"https://ps.w.org/acf-to-rest-api/assets/icon-128x128.jpg?rev=1752896\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:71:\"https://ps.w.org/acf-to-rest-api/assets/banner-1544x500.jpg?rev=1752896\";s:2:\"1x\";s:70:\"https://ps.w.org/acf-to-rest-api/assets/banner-772x250.jpg?rev=1752896\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
+(162, '_transient_timeout_acf_plugin_updates', '1560375884', 'no'),
+(163, '_transient_acf_plugin_updates', 'a:4:{s:7:\"plugins\";a:1:{s:34:\"advanced-custom-fields-pro/acf.php\";a:8:{s:4:\"slug\";s:26:\"advanced-custom-fields-pro\";s:6:\"plugin\";s:34:\"advanced-custom-fields-pro/acf.php\";s:11:\"new_version\";s:5:\"5.8.1\";s:3:\"url\";s:36:\"https://www.advancedcustomfields.com\";s:6:\"tested\";s:3:\"5.2\";s:7:\"package\";s:0:\"\";s:5:\"icons\";a:1:{s:7:\"default\";s:63:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png\";}s:7:\"banners\";a:1:{s:7:\"default\";s:66:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg\";}}}s:10:\"expiration\";i:86400;s:6:\"status\";i:1;s:7:\"checked\";a:1:{s:34:\"advanced-custom-fields-pro/acf.php\";s:5:\"5.8.0\";}}', 'no'),
+(164, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1560289484;s:7:\"checked\";a:1:{s:8:\"no-front\";s:3:\"1.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_postmeta`
+-- Table structure for table `kibo_postmeta`
 --
 
 DROP TABLE IF EXISTS `kibo_postmeta`;
@@ -284,20 +294,60 @@ CREATE TABLE IF NOT EXISTS `kibo_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_postmeta`
+-- Dumping data for table `kibo_postmeta`
 --
 
 INSERT INTO `kibo_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
 (1, 2, '_wp_page_template', 'default'),
-(2, 3, '_wp_page_template', 'default');
+(2, 3, '_wp_page_template', 'default'),
+(5, 7, '_edit_last', '1'),
+(6, 7, '_edit_lock', '1560289514:1'),
+(7, 8, '_edit_last', '1'),
+(8, 8, '_edit_lock', '1560292906:1'),
+(9, 9, '_edit_last', '1'),
+(10, 9, '_edit_lock', '1560292427:1'),
+(11, 12, '_edit_last', '1'),
+(12, 12, '_edit_lock', '1560292454:1'),
+(13, 15, '_edit_last', '1'),
+(14, 15, '_edit_lock', '1560292485:1'),
+(15, 18, '_edit_last', '1'),
+(16, 18, '_edit_lock', '1560292504:1'),
+(17, 20, '_edit_last', '1'),
+(18, 20, '_edit_lock', '1560292529:1'),
+(19, 23, '_edit_last', '1'),
+(20, 23, '_edit_lock', '1560292686:1'),
+(21, 8, 'bi-texto', 'Set Up'),
+(22, 8, '_bi-texto', 'field_5d0021fded5da'),
+(23, 8, 'bi-background', ''),
+(24, 8, '_bi-background', 'field_5d00224bed5db'),
+(25, 8, 'bii-texto', ''),
+(26, 8, '_bii-texto', 'field_5d00231890f15'),
+(27, 8, 'bii-background', ''),
+(28, 8, '_bii-background', 'field_5d00233290f16'),
+(29, 8, 'biii-captura-del-player', ''),
+(30, 8, '_biii-captura-del-player', 'field_5d002396f04f5'),
+(31, 8, 'biii-video', ''),
+(32, 8, '_biii-video', 'field_5d0023b5f04f6'),
+(33, 8, 'biv-galeria', ''),
+(34, 8, '_biv-galeria', 'field_5d00242ec4ce2'),
+(35, 8, 'bv-subtitulo', ''),
+(36, 8, '_bv-subtitulo', 'field_5d0024d0cc6bf'),
+(37, 8, 'bv-texto', ''),
+(38, 8, '_bv-texto', 'field_5d0024e4cc6c0'),
+(39, 8, 'bvi-subtitulo', ''),
+(40, 8, '_bvi-subtitulo', 'field_5d00254485e0d'),
+(41, 8, 'bi_texto', 'Test'),
+(42, 8, '_bi_texto', 'field_5d0021fded5da'),
+(43, 8, 'bi_background', ''),
+(44, 8, '_bi_background', 'field_5d00224bed5db');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_posts`
+-- Table structure for table `kibo_posts`
 --
 
 DROP TABLE IF EXISTS `kibo_posts`;
@@ -330,22 +380,41 @@ CREATE TABLE IF NOT EXISTS `kibo_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_posts`
+-- Dumping data for table `kibo_posts`
 --
 
 INSERT INTO `kibo_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (1, 1, '2019-06-11 17:21:10', '2019-06-11 15:21:10', '<!-- wp:paragraph -->\n<p>Bienvenido a WordPress. Esta es tu primera entrada. Edítala o bórrala, ¡luego empieza a escribir!</p>\n<!-- /wp:paragraph -->', '¡Hola, mundo!', '', 'publish', 'open', 'open', '', 'hola-mundo', '', '', '2019-06-11 17:21:10', '2019-06-11 15:21:10', '', 0, 'http://localhost/app/?p=1', 0, 'post', '', 1),
 (2, 1, '2019-06-11 17:21:10', '2019-06-11 15:21:10', '<!-- wp:paragraph -->\n<p>Esta es una página de ejemplo. Es diferente a una entrada del blog porque permanecerá en un solo lugar y aparecerá en la navegación de tu sitio (en la mayoría de los temas). La mayoría de las personas comienzan con una página «Acerca de» que les presenta a los visitantes potenciales del sitio. Podrías decir algo así:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>¡Bienvenido! Soy camarero de día, aspirante a actor de noche y esta es mi web. Vivo en Mairena del Alcor, tengo un perro que se llama Firulais y me gusta el rebujito. (Y las tardes largas con café).</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>…o algo así:</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:quote -->\n<blockquote class=\"wp-block-quote\"><p>La empresa «Mariscos Recio» fue fundada por Antonio Recio Mata. Empezó siendo una pequeña empresa que suministraba marisco a hoteles y restaurantes, pero poco a poco se ha ido transformando en un gran imperio. Mariscos Recio, el mar al mejor precio.</p></blockquote>\n<!-- /wp:quote -->\n\n<!-- wp:paragraph -->\n<p>Como nuevo usuario de WordPress, deberías ir a <a href=\"http://localhost/app/wp-admin/\">tu escritorio</a> para borrar esta página y crear nuevas páginas para tu contenido. ¡Pásalo bien!</p>\n<!-- /wp:paragraph -->', 'Página de ejemplo', '', 'publish', 'closed', 'open', '', 'pagina-ejemplo', '', '', '2019-06-11 17:21:10', '2019-06-11 15:21:10', '', 0, 'http://localhost/app/?page_id=2', 0, 'page', '', 0),
 (3, 1, '2019-06-11 17:21:10', '2019-06-11 15:21:10', '<!-- wp:heading --><h2>Quiénes somos</h2><!-- /wp:heading --><!-- wp:paragraph --><p>La dirección de nuestra web es: http://localhost/app.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Qué datos personales recogemos y por qué los recogemos</h2><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Comentarios</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Cuando los visitantes dejan comentarios en la web, recopilamos los datos que se muestran en el formulario de comentarios, así como la dirección IP del visitante y la cadena de agentes de usuario del navegador para ayudar a la detección de spam.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Una cadena anónima creada a partir de tu dirección de correo electrónico (también llamada hash) puede ser proporcionada al servicio de Gravatar para ver si la estás usando. La política de privacidad del servicio Gravatar está disponible aquí: https://automattic.com/privacy/. Después de la aprobación de tu comentario, la imagen de tu perfil es visible para el público en el contexto de su comentario.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Medios</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Si subes imágenes a la web deberías evitar subir imágenes con datos de ubicación (GPS EXIF) incluidos. Los visitantes de la web pueden descargar y extraer cualquier dato de localización de las imágenes de la web.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Formularios de contacto</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Cookies</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Si dejas un comentario en nuestro sitio puedes elegir guardar tu nombre, dirección de correo electrónico y web en cookies. Esto es para tu comodidad, para que no tengas que volver a rellenar tus datos cuando dejes otro comentario. Estas cookies tendrán una duración de un año.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Si tienes una cuenta y te conectas a este sitio, instalaremos una cookie temporal para determinar si tu navegador acepta cookies. Esta cookie no contiene datos personales y se elimina al cerrar el navegador.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Cuando inicias sesión, también instalaremos varias cookies para guardar tu información de inicio de sesión y tus opciones de visualización de pantalla. Las cookies de inicio de sesión duran dos días, y las cookies de opciones de pantalla duran un año. Si seleccionas &quot;Recordarme&quot;, tu inicio de sesión perdurará durante dos semanas. Si sales de tu cuenta, las cookies de inicio de sesión se eliminarán.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Si editas o publicas un artículo se guardará una cookie adicional en tu navegador. Esta cookie no incluye datos personales y simplemente indica el ID del artículo que acabas de editar. Caduca después de 1 día.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Contenido incrustado de otros sitios web</h3><!-- /wp:heading --><!-- wp:paragraph --><p>Los artículos de este sitio pueden incluir contenido incrustado (por ejemplo, vídeos, imágenes, artículos, etc.). El contenido incrustado de otras web se comporta exactamente de la misma manera que si el visitante hubiera visitado la otra web.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Estas web pueden recopilar datos sobre ti, utilizar cookies, incrustar un seguimiento adicional de terceros, y supervisar tu interacción con ese contenido incrustado, incluido el seguimiento de tu interacción con el contenido incrustado si tienes una cuenta y estás conectado a esa web.</p><!-- /wp:paragraph --><!-- wp:heading {\"level\":3} --><h3>Analítica</h3><!-- /wp:heading --><!-- wp:heading --><h2>Con quién compartimos tus datos</h2><!-- /wp:heading --><!-- wp:heading --><h2>Cuánto tiempo conservamos tus datos</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Si dejas un comentario, el comentario y sus metadatos se conservan indefinidamente. Esto es para que podamos reconocer y aprobar comentarios sucesivos automáticamente en lugar de mantenerlos en una cola de moderación.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>De los usuarios que se registran en nuestra web (si los hay), también almacenamos la información personal que proporcionan en su perfil de usuario. Todos los usuarios pueden ver, editar o eliminar su información personal en cualquier momento (excepto que no pueden cambiar su nombre de usuario). Los administradores de la web también pueden ver y editar esa información.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Qué derechos tienes sobre tus datos</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Si tienes una cuenta o has dejado comentarios en esta web, puedes solicitar recibir un archivo de exportación de los datos personales que tenemos sobre ti, incluyendo cualquier dato que nos hayas proporcionado. También puedes solicitar que eliminemos cualquier dato personal que tengamos sobre ti. Esto no incluye ningún dato que estemos obligados a conservar con fines administrativos, legales o de seguridad.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Dónde enviamos tus datos</h2><!-- /wp:heading --><!-- wp:paragraph --><p>Los comentarios de los visitantes puede que los revise un servicio de detección automática de spam.</p><!-- /wp:paragraph --><!-- wp:heading --><h2>Tu información de contacto</h2><!-- /wp:heading --><!-- wp:heading --><h2>Información adicional</h2><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Cómo protegemos tus datos</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Qué procedimientos utilizamos contra las brechas de datos</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>De qué terceros recibimos datos</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Qué tipo de toma de decisiones automatizada y/o perfilado hacemos con los datos del usuario</h3><!-- /wp:heading --><!-- wp:heading {\"level\":3} --><h3>Requerimientos regulatorios de revelación de información del sector</h3><!-- /wp:heading -->', 'Política de privacidad', '', 'draft', 'closed', 'open', '', 'politica-privacidad', '', '', '2019-06-11 17:21:10', '2019-06-11 15:21:10', '', 0, 'http://localhost/app/?page_id=3', 0, 'page', '', 0),
-(4, 1, '2019-06-11 17:22:02', '0000-00-00 00:00:00', '', 'Borrador automático', '', 'auto-draft', 'open', 'open', '', '', '', '', '2019-06-11 17:22:02', '0000-00-00 00:00:00', '', 0, 'http://localhost/app/?p=4', 0, 'post', '', 0);
+(4, 1, '2019-06-11 17:22:02', '0000-00-00 00:00:00', '', 'Borrador automático', '', 'auto-draft', 'open', 'open', '', '', '', '', '2019-06-11 17:22:02', '0000-00-00 00:00:00', '', 0, 'http://localhost/app/?p=4', 0, 'post', '', 0),
+(6, 1, '2019-06-11 23:46:11', '0000-00-00 00:00:00', '', 'Borrador automático', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2019-06-11 23:46:11', '0000-00-00 00:00:00', '', 0, 'http://localhost/app/?post_type=html5-blank&p=6', 0, 'html5-blank', '', 0),
+(7, 1, '2019-06-11 23:46:48', '2019-06-11 21:46:48', '', 'My Home', '', 'publish', 'closed', 'closed', '', 'my-home', '', '', '2019-06-11 23:46:48', '2019-06-11 21:46:48', '', 0, 'http://localhost/app/?post_type=html5-blank&#038;p=7', 0, 'html5-blank', '', 0),
+(8, 1, '2019-06-11 23:48:16', '2019-06-11 21:48:16', '', 'MyHome', '', 'publish', 'closed', 'closed', '', 'myhome', '', '', '2019-06-12 00:30:38', '2019-06-11 22:30:38', '', 0, 'http://localhost/app/?post_type=home-blocks&#038;p=8', 0, 'home-blocks', '', 0),
+(9, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";a:14:{i:0;s:9:\"permalink\";i:1;s:11:\"the_content\";i:2;s:7:\"excerpt\";i:3;s:10:\"discussion\";i:4;s:8:\"comments\";i:5;s:9:\"revisions\";i:6;s:4:\"slug\";i:7;s:6:\"author\";i:8;s:6:\"format\";i:9;s:15:\"page_attributes\";i:10;s:14:\"featured_image\";i:11;s:10:\"categories\";i:12;s:4:\"tags\";i:13;s:15:\"send-trackbacks\";}s:11:\"description\";s:22:\"Contenido del Bloque I\";}', 'Bloque I', 'bloque-i', 'publish', 'closed', 'closed', '', 'group_5d0021b0be574', '', '', '2019-06-12 00:29:58', '2019-06-11 22:29:58', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=9', 0, 'acf-field-group', '', 0),
+(10, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:1;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bi_texto', 'publish', 'closed', 'closed', '', 'field_5d0021fded5da', '', '', '2019-06-12 00:29:58', '2019-06-11 22:29:58', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=10', 0, 'acf-field', '', 0),
+(11, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Background', 'bi_background', 'publish', 'closed', 'closed', '', 'field_5d00224bed5db', '', '', '2019-06-12 00:29:58', '2019-06-11 22:29:58', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=11', 1, 'acf-field', '', 0),
+(12, 1, '2019-06-11 23:52:41', '2019-06-11 21:52:41', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque II\";}', 'Bloque II', 'bloque-ii', 'publish', 'closed', 'closed', '', 'group_5d002290f1dbc', '', '', '2019-06-12 00:36:31', '2019-06-11 22:36:31', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=12', 0, 'acf-field-group', '', 0),
+(13, 1, '2019-06-11 23:55:22', '2019-06-11 21:55:22', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bii_texto', 'publish', 'closed', 'closed', '', 'field_5d00231890f15', '', '', '2019-06-12 00:36:31', '2019-06-11 22:36:31', '', 12, 'http://localhost/app/?post_type=acf-field&#038;p=13', 0, 'acf-field', '', 0),
+(14, 1, '2019-06-11 23:55:22', '2019-06-11 21:55:22', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Background', 'bii_background', 'publish', 'closed', 'closed', '', 'field_5d00233290f16', '', '', '2019-06-12 00:36:31', '2019-06-11 22:36:31', '', 12, 'http://localhost/app/?post_type=acf-field&#038;p=14', 1, 'acf-field', '', 0),
+(15, 1, '2019-06-11 23:56:36', '2019-06-11 21:56:36', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:24:\"Contenidos de Bloque III\";}', 'Bloque III', 'bloque-iii', 'publish', 'closed', 'closed', '', 'group_5d00237f3c46d', '', '', '2019-06-12 00:37:04', '2019-06-11 22:37:04', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=15', 0, 'acf-field-group', '', 0),
+(16, 1, '2019-06-11 23:57:42', '2019-06-11 21:57:42', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Captura del Player', 'biii_captura_del_player', 'publish', 'closed', 'closed', '', 'field_5d002396f04f5', '', '', '2019-06-12 00:37:04', '2019-06-11 22:37:04', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=16', 0, 'acf-field', '', 0),
+(17, 1, '2019-06-11 23:57:42', '2019-06-11 21:57:42', 'a:10:{s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";}', 'Video', 'biii_video', 'publish', 'closed', 'closed', '', 'field_5d0023b5f04f6', '', '', '2019-06-12 00:37:04', '2019-06-11 22:37:04', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=17', 1, 'acf-field', '', 0),
+(18, 1, '2019-06-11 23:59:07', '2019-06-11 21:59:07', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque IV\";}', 'Bloque IV', 'bloque-iv', 'publish', 'closed', 'closed', '', 'group_5d0024101d3bd', '', '', '2019-06-12 00:37:20', '2019-06-11 22:37:20', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=18', 0, 'acf-field-group', '', 0),
+(19, 1, '2019-06-11 23:59:56', '2019-06-11 21:59:56', 'a:16:{s:4:\"type\";s:7:\"gallery\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:6:\"insert\";s:6:\"append\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Galería', 'biv_galeria', 'publish', 'closed', 'closed', '', 'field_5d00242ec4ce2', '', '', '2019-06-12 00:37:20', '2019-06-11 22:37:20', '', 18, 'http://localhost/app/?post_type=acf-field&#038;p=19', 0, 'acf-field', '', 0),
+(20, 1, '2019-06-12 00:02:43', '2019-06-11 22:02:43', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:22:\"Contenidos de Bloque V\";}', 'Bloque V', 'bloque-v', 'publish', 'closed', 'closed', '', 'group_5d0024c1bb21e', '', '', '2019-06-12 00:37:48', '2019-06-11 22:37:48', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=20', 0, 'acf-field-group', '', 0),
+(21, 1, '2019-06-12 00:02:43', '2019-06-11 22:02:43', 'a:10:{s:4:\"type\";s:8:\"textarea\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:4:\"rows\";s:0:\"\";s:9:\"new_lines\";s:0:\"\";}', 'Subtitulo', 'bv_subtitulo', 'publish', 'closed', 'closed', '', 'field_5d0024d0cc6bf', '', '', '2019-06-12 00:37:48', '2019-06-11 22:37:48', '', 20, 'http://localhost/app/?post_type=acf-field&#038;p=21', 0, 'acf-field', '', 0),
+(22, 1, '2019-06-12 00:02:43', '2019-06-11 22:02:43', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bv_texto', 'publish', 'closed', 'closed', '', 'field_5d0024e4cc6c0', '', '', '2019-06-12 00:37:48', '2019-06-11 22:37:48', '', 20, 'http://localhost/app/?post_type=acf-field&#038;p=22', 1, 'acf-field', '', 0),
+(23, 1, '2019-06-12 00:04:13', '2019-06-11 22:04:13', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque VI\";}', 'Bloque VI', 'bloque-vi', 'publish', 'closed', 'closed', '', 'group_5d00253cd9b22', '', '', '2019-06-12 00:38:05', '2019-06-11 22:38:05', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=23', 0, 'acf-field-group', '', 0),
+(24, 1, '2019-06-12 00:04:13', '2019-06-11 22:04:13', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Subtitulo', 'bvi_subtitulo', 'publish', 'closed', 'closed', '', 'field_5d00254485e0d', '', '', '2019-06-12 00:38:05', '2019-06-11 22:38:05', '', 23, 'http://localhost/app/?post_type=acf-field&#038;p=24', 0, 'acf-field', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_termmeta`
+-- Table structure for table `kibo_termmeta`
 --
 
 DROP TABLE IF EXISTS `kibo_termmeta`;
@@ -362,7 +431,7 @@ CREATE TABLE IF NOT EXISTS `kibo_termmeta` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_terms`
+-- Table structure for table `kibo_terms`
 --
 
 DROP TABLE IF EXISTS `kibo_terms`;
@@ -377,7 +446,7 @@ CREATE TABLE IF NOT EXISTS `kibo_terms` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_terms`
+-- Dumping data for table `kibo_terms`
 --
 
 INSERT INTO `kibo_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
@@ -386,7 +455,7 @@ INSERT INTO `kibo_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_term_relationships`
+-- Table structure for table `kibo_term_relationships`
 --
 
 DROP TABLE IF EXISTS `kibo_term_relationships`;
@@ -399,7 +468,7 @@ CREATE TABLE IF NOT EXISTS `kibo_term_relationships` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_term_relationships`
+-- Dumping data for table `kibo_term_relationships`
 --
 
 INSERT INTO `kibo_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
@@ -408,7 +477,7 @@ INSERT INTO `kibo_term_relationships` (`object_id`, `term_taxonomy_id`, `term_or
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_term_taxonomy`
+-- Table structure for table `kibo_term_taxonomy`
 --
 
 DROP TABLE IF EXISTS `kibo_term_taxonomy`;
@@ -425,7 +494,7 @@ CREATE TABLE IF NOT EXISTS `kibo_term_taxonomy` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_term_taxonomy`
+-- Dumping data for table `kibo_term_taxonomy`
 --
 
 INSERT INTO `kibo_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
@@ -434,7 +503,7 @@ INSERT INTO `kibo_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `de
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_usermeta`
+-- Table structure for table `kibo_usermeta`
 --
 
 DROP TABLE IF EXISTS `kibo_usermeta`;
@@ -446,10 +515,10 @@ CREATE TABLE IF NOT EXISTS `kibo_usermeta` (
   PRIMARY KEY (`umeta_id`),
   KEY `user_id` (`user_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_usermeta`
+-- Dumping data for table `kibo_usermeta`
 --
 
 INSERT INTO `kibo_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES
@@ -468,16 +537,21 @@ INSERT INTO `kibo_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VA
 (13, 1, 'kibo_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:1:{s:64:\"35fd4df0a280471008a10d34451749f5fa7e01bc67db755e200a0d18f7cc3ce1\";a:4:{s:10:\"expiration\";i:1560439317;s:2:\"ip\";s:10:\"172.24.0.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560266517;}}'),
+(16, 1, 'session_tokens', 'a:2:{s:64:\"35fd4df0a280471008a10d34451749f5fa7e01bc67db755e200a0d18f7cc3ce1\";a:4:{s:10:\"expiration\";i:1560439317;s:2:\"ip\";s:10:\"172.24.0.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560266517;}s:64:\"3a35a480ba11633ec3263d4712660c1b842dfc955f1377b60a528f5658ff5137\";a:4:{s:10:\"expiration\";i:1560461849;s:2:\"ip\";s:13:\"192.168.144.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560289049;}}'),
 (17, 1, 'kibo_dashboard_quick_press_last_post_id', '4'),
-(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:10:\"172.24.0.0\";}'),
+(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:13:\"192.168.144.0\";}'),
 (19, 1, 'closedpostboxes_dashboard', 'a:4:{i:0;s:19:\"dashboard_right_now\";i:1;s:18:\"dashboard_activity\";i:2;s:21:\"dashboard_quick_press\";i:3;s:17:\"dashboard_primary\";}'),
-(20, 1, 'metaboxhidden_dashboard', 'a:0:{}');
+(20, 1, 'metaboxhidden_dashboard', 'a:0:{}'),
+(21, 1, 'kibo_user-settings', 'deleted=undefined&libraryContent=browse&editor=tinymce&hidetb=0&imgsize=full&posts_list_mode=list&align=left&uploader=1&post_dfw=off&editor_expand=off'),
+(22, 1, 'kibo_user-settings-time', '1560291125'),
+(23, 1, 'closedpostboxes_acf-field-group', 'a:0:{}'),
+(24, 1, 'metaboxhidden_acf-field-group', 'a:1:{i:0;s:7:\"slugdiv\";}'),
+(25, 1, 'edit_home-blocks_per_page', '20');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `kibo_users`
+-- Table structure for table `kibo_users`
 --
 
 DROP TABLE IF EXISTS `kibo_users`;
@@ -499,7 +573,7 @@ CREATE TABLE IF NOT EXISTS `kibo_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Volcado de datos para la tabla `kibo_users`
+-- Dumping data for table `kibo_users`
 --
 
 INSERT INTO `kibo_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
