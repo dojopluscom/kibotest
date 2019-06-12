@@ -4,9 +4,10 @@ header {
     position: fixed;
     top: 35px;
     left: 0;
-    z-index: 9;
+    z-index: 999;
     > div {
         height: 35px;
+
         > div {
             height: 35px;
             &#logo-block {
