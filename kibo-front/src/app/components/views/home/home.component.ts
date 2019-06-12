@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.wpService.getUsers()
+    this.wpService.getHomeData()
     .subscribe(
       (data) => { // Success
         this.data = data["acf"];

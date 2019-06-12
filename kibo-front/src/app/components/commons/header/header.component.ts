@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WpService } from '../../../services/wp/wp.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+    data;
 
-  constructor() { }
+    constructor(protected wpService: WpService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+
+        this.wpService.getHeaderMenu()
+            .subscribe(
+                (data) => { // Success
+                    this.data = data;
+                },
+                (error) => {
+                    console.error(error);
+                }
+        );
+
+    }
 
 }

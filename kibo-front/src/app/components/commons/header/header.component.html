@@ -1,3 +1,10 @@
-<p>
-  header works!
-</p>
+<header>
+    <div id="logo-block"></div>
+    <div id="menu-block">
+        <ul>
+            <li *ngFor="let item of data; let i = index">
+                <a href="{{item.url}}">{{item.title}}</a>
+            </li>
+        </ul>
+    </div>
+</header>

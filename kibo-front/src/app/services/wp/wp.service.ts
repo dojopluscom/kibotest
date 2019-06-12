@@ -7,20 +7,26 @@ import { HttpClient } from '@angular/common/http';
 
 export class WpService {
 
-  urlApi = 'http://localhost/app/wp-json/wp/v2/';
-  idHomeBlocks = 8;
+    urlMenuApi = 'http://localhost/app/wp-json/menus/v2/header';
 
-  urlCf7Api = 'http://localhost/app/wp-json/contact-form-7/v1/contact-forms/';
-  idCf7 = 7;
+    urlApi = 'http://localhost/app/wp-json/wp/v2/';
+    idHomeBlocks = 8;
 
-  constructor(protected http: HttpClient) { }
+    urlCf7Api = 'http://localhost/app/wp-json/contact-form-7/v1/contact-forms/';
+    idCf7 = 7;
 
-  getUsers() {
-    return this.http.get(this.urlApi + 'home-blocks/' + this.idHomeBlocks);
-  }
+    constructor(protected http: HttpClient) { }
 
-  sendContact($post) {
-    return this.http.post(this.urlCf7Api + this.idCf7 + '/feedback', $post);
-  }
+    getHeaderMenu() {
+        return this.http.get(this.urlMenuApi);
+    }
+
+    getHomeData() {
+        return this.http.get(this.urlApi + 'home-blocks/' + this.idHomeBlocks);
+    }
+
+    sendContact($post) {
+        return this.http.post(this.urlCf7Api + this.idCf7 + '/feedback', $post);
+    }
 
 }
