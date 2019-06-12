@@ -1,11 +1,11 @@
 ﻿-- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql:3306
--- Generation Time: Jun 11, 2019 at 11:16 PM
--- Server version: 5.7.25
--- PHP Version: 7.2.8
+-- Servidor: mysql:3306
+-- Tiempo de generación: 12-06-2019 a las 10:43:32
+-- Versión del servidor: 5.7.26
+-- Versión de PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kibo`
+-- Base de datos: `kibo`
 --
 CREATE DATABASE IF NOT EXISTS `kibo` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `kibo`;
@@ -27,7 +27,7 @@ USE `kibo`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_commentmeta`
+-- Estructura de tabla para la tabla `kibo_commentmeta`
 --
 
 DROP TABLE IF EXISTS `kibo_commentmeta`;
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `kibo_commentmeta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_comments`
+-- Estructura de tabla para la tabla `kibo_comments`
 --
 
 DROP TABLE IF EXISTS `kibo_comments`;
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `kibo_comments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_comments`
+-- Volcado de datos para la tabla `kibo_comments`
 --
 
 INSERT INTO `kibo_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
@@ -82,7 +82,7 @@ INSERT INTO `kibo_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_links`
+-- Estructura de tabla para la tabla `kibo_links`
 --
 
 DROP TABLE IF EXISTS `kibo_links`;
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `kibo_links` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_options`
+-- Estructura de tabla para la tabla `kibo_options`
 --
 
 DROP TABLE IF EXISTS `kibo_options`;
@@ -118,10 +118,10 @@ CREATE TABLE IF NOT EXISTS `kibo_options` (
   `autoload` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_options`
+-- Volcado de datos para la tabla `kibo_options`
 --
 
 INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
@@ -157,7 +157,7 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (30, 'hack_file', '0', 'yes'),
 (31, 'blog_charset', 'UTF-8', 'yes'),
 (32, 'moderation_keys', '', 'no'),
-(33, 'active_plugins', 'a:4:{i:0;s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";i:1;s:34:\"advanced-custom-fields-pro/acf.php\";i:2;s:27:\"redis-cache/redis-cache.php\";i:3;s:27:\"redis-cache/redis-cache.php\";}', 'yes'),
+(33, 'active_plugins', 'a:5:{i:0;s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";i:1;s:34:\"advanced-custom-fields-pro/acf.php\";i:2;s:36:\"contact-form-7/wp-contact-form-7.php\";i:3;s:27:\"redis-cache/redis-cache.php\";i:4;s:27:\"redis-cache/redis-cache.php\";}', 'yes'),
 (34, 'category_base', '', 'yes'),
 (35, 'ping_sites', 'http://rpc.pingomatic.com/', 'yes'),
 (36, 'comment_max_links', '2', 'yes'),
@@ -227,7 +227,7 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (100, 'widget_archives', 'a:2:{i:2;a:3:{s:5:\"title\";s:0:\"\";s:5:\"count\";i:0;s:8:\"dropdown\";i:0;}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (101, 'widget_meta', 'a:2:{i:2;a:1:{s:5:\"title\";s:0:\"\";}s:12:\"_multiwidget\";i:1;}', 'yes'),
 (102, 'sidebars_widgets', 'a:4:{s:19:\"wp_inactive_widgets\";a:6:{i:0;s:8:\"search-2\";i:1;s:14:\"recent-posts-2\";i:2;s:17:\"recent-comments-2\";i:3;s:10:\"archives-2\";i:4;s:12:\"categories-2\";i:5;s:6:\"meta-2\";}s:13:\"widget-area-1\";a:0:{}s:13:\"widget-area-2\";a:0:{}s:13:\"array_version\";i:3;}', 'yes'),
-(103, 'cron', 'a:7:{i:1560295272;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1560296369;a:1:{s:26:\"upgrader_scheduled_cleanup\";a:1:{s:32:\"c9059feef497c200e69cb9956a81f005\";a:2:{s:8:\"schedule\";b:0;s:4:\"args\";a:1:{i:0;i:5;}}}}i:1560309672;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1560352871;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352919;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352922;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
+(103, 'cron', 'a:6:{i:1560338472;a:1:{s:34:\"wp_privacy_delete_old_export_files\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:6:\"hourly\";s:4:\"args\";a:0:{}s:8:\"interval\";i:3600;}}}i:1560352871;a:1:{s:32:\"recovery_mode_clean_expired_keys\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352872;a:3:{s:16:\"wp_version_check\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:17:\"wp_update_plugins\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}s:16:\"wp_update_themes\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:10:\"twicedaily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:43200;}}}i:1560352919;a:2:{s:19:\"wp_scheduled_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}s:25:\"delete_expired_transients\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}i:1560352922;a:1:{s:30:\"wp_scheduled_auto_draft_delete\";a:1:{s:32:\"40cd750bba9870f18aada2478b24840a\";a:3:{s:8:\"schedule\";s:5:\"daily\";s:4:\"args\";a:0:{}s:8:\"interval\";i:86400;}}}s:7:\"version\";i:2;}', 'yes'),
 (104, 'widget_pages', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (105, 'widget_calendar', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
 (106, 'widget_media_audio', 'a:1:{s:12:\"_multiwidget\";i:1;}', 'yes'),
@@ -261,7 +261,7 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (141, '_transient_timeout_dash_v2_c05853b002c443ec8e57ff884f56cdde', '1560309728', 'no'),
 (142, '_transient_dash_v2_c05853b002c443ec8e57ff884f56cdde', '<div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'https://es.wordpress.org/2019/06/08/meetups-del-mes-de-junio/\'>Meetups del mes de junio</a></li></ul></div><div class=\"rss-widget\"><ul><li><a class=\'rsswidget\' href=\'https://wptavern.com/former-npm-inc-cto-announces-entropic-a-decentralized-package-registry\'>WPTavern: Former npm, Inc. CTO Announces Entropic, a Decentralized Package Registry</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/buddypress-5-0-to-update-password-control-to-match-wordpress\'>WPTavern: BuddyPress 5.0 to Update Password Control to Match WordPress</a></li><li><a class=\'rsswidget\' href=\'https://wptavern.com/in-case-you-missed-it-issue-25\'>WPTavern: In Case You Missed It – Issue 25</a></li></ul></div>', 'no'),
 (145, 'current_theme', 'No Front', 'yes'),
-(146, 'theme_mods_no-front', 'a:2:{i:0;b:0;s:18:\"nav_menu_locations\";a:0:{}}', 'yes'),
+(146, 'theme_mods_no-front', 'a:2:{i:0;b:0;s:18:\"nav_menu_locations\";a:1:{s:11:\"header-menu\";i:2;}}', 'yes'),
 (147, 'theme_switched', '', 'yes'),
 (149, '_site_transient_timeout_community-events-7e67ab6dfbbf1b0e5c897d37a41683a1', '1560332259', 'no'),
 (150, '_site_transient_community-events-7e67ab6dfbbf1b0e5c897d37a41683a1', 'a:2:{s:8:\"location\";a:1:{s:2:\"ip\";s:13:\"192.168.144.0\";}s:6:\"events\";a:5:{i:0;a:7:{s:4:\"type\";s:8:\"wordcamp\";s:5:\"title\";s:15:\"WordCamp Europe\";s:3:\"url\";s:33:\"https://2019.europe.wordcamp.org/\";s:6:\"meetup\";s:0:\"\";s:10:\"meetup_url\";s:0:\"\";s:4:\"date\";s:19:\"2019-06-20 00:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:15:\"Berlin, Germany\";s:7:\"country\";s:2:\"DE\";s:8:\"latitude\";d:52.50697;s:9:\"longitude\";d:13.2843064;}}i:1;a:7:{s:4:\"type\";s:6:\"meetup\";s:5:\"title\";s:23:\"1.er Hackaton WPGranada\";s:3:\"url\";s:65:\"https://www.meetup.com/Granada-WordPress-Meetup/events/261482045/\";s:6:\"meetup\";s:24:\"Granada WordPress Meetup\";s:10:\"meetup_url\";s:48:\"https://www.meetup.com/Granada-WordPress-Meetup/\";s:4:\"date\";s:19:\"2019-06-12 17:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:14:\"Granada, Spain\";s:7:\"country\";s:2:\"es\";s:8:\"latitude\";d:37.197056;s:9:\"longitude\";d:-3.624551;}}i:2;a:7:{s:4:\"type\";s:6:\"meetup\";s:5:\"title\";s:69:\"Técnicas de conversión para negocios digitales basados en WordPress\";s:3:\"url\";s:57:\"https://www.meetup.com/WordPress-Malaga/events/258812875/\";s:6:\"meetup\";s:17:\"WordPress Málaga\";s:10:\"meetup_url\";s:40:\"https://www.meetup.com/WordPress-Malaga/\";s:4:\"date\";s:19:\"2019-06-27 19:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:14:\"Málaga, Spain\";s:7:\"country\";s:2:\"es\";s:8:\"latitude\";d:36.728634;s:9:\"longitude\";d:-4.431205;}}i:3;a:7:{s:4:\"type\";s:8:\"wordcamp\";s:5:\"title\";s:16:\"WordCamp Sevilla\";s:3:\"url\";s:44:\"https://2019-developers.sevilla.wordcamp.org\";s:6:\"meetup\";N;s:10:\"meetup_url\";N;s:4:\"date\";s:19:\"2019-10-04 00:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:25:\"Seville, Andalusia, Spain\";s:7:\"country\";s:2:\"ES\";s:8:\"latitude\";d:37.3705646;s:9:\"longitude\";d:-5.9912288;}}i:4;a:7:{s:4:\"type\";s:8:\"wordcamp\";s:5:\"title\";s:24:\"WordCamp Valencia, Spain\";s:3:\"url\";s:34:\"https://2019.valencia.wordcamp.org\";s:6:\"meetup\";N;s:10:\"meetup_url\";N;s:4:\"date\";s:19:\"2019-10-19 00:00:00\";s:8:\"location\";a:4:{s:8:\"location\";s:15:\"Valencia, Spain\";s:7:\"country\";s:2:\"ES\";s:8:\"latitude\";d:39.475888;s:9:\"longitude\";d:-0.393696;}}}}', 'no'),
@@ -279,12 +279,14 @@ INSERT INTO `kibo_options` (`option_id`, `option_name`, `option_value`, `autoloa
 (169, '_site_transient_theme_roots', 'a:1:{s:8:\"no-front\";s:7:\"/themes\";}', 'no'),
 (174, '_site_transient_update_core', 'O:8:\"stdClass\":4:{s:7:\"updates\";a:1:{i:0;O:8:\"stdClass\":10:{s:8:\"response\";s:6:\"latest\";s:8:\"download\";s:65:\"https://downloads.wordpress.org/release/es_ES/wordpress-5.2.1.zip\";s:6:\"locale\";s:5:\"es_ES\";s:8:\"packages\";O:8:\"stdClass\":5:{s:4:\"full\";s:65:\"https://downloads.wordpress.org/release/es_ES/wordpress-5.2.1.zip\";s:10:\"no_content\";b:0;s:11:\"new_bundled\";b:0;s:7:\"partial\";b:0;s:8:\"rollback\";b:0;}s:7:\"current\";s:5:\"5.2.1\";s:7:\"version\";s:5:\"5.2.1\";s:11:\"php_version\";s:6:\"5.6.20\";s:13:\"mysql_version\";s:3:\"5.0\";s:11:\"new_bundled\";s:3:\"5.0\";s:15:\"partial_version\";s:0:\"\";}}s:12:\"last_checked\";i:1560294824;s:15:\"version_checked\";s:5:\"5.2.1\";s:12:\"translations\";a:0:{}}', 'no'),
 (175, '_site_transient_update_plugins', 'O:8:\"stdClass\":5:{s:12:\"last_checked\";i:1560294825;s:7:\"checked\";a:3:{s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";s:5:\"3.1.0\";s:34:\"advanced-custom-fields-pro/acf.php\";s:5:\"5.8.0\";s:27:\"redis-cache/redis-cache.php\";s:5:\"1.4.3\";}s:8:\"response\";a:1:{s:34:\"advanced-custom-fields-pro/acf.php\";O:8:\"stdClass\":8:{s:4:\"slug\";s:26:\"advanced-custom-fields-pro\";s:6:\"plugin\";s:34:\"advanced-custom-fields-pro/acf.php\";s:11:\"new_version\";s:5:\"5.8.1\";s:3:\"url\";s:36:\"https://www.advancedcustomfields.com\";s:6:\"tested\";s:3:\"5.2\";s:7:\"package\";s:0:\"\";s:5:\"icons\";a:1:{s:7:\"default\";s:63:\"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png\";}s:7:\"banners\";a:1:{s:7:\"default\";s:66:\"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg\";}}}s:12:\"translations\";a:0:{}s:9:\"no_update\";a:2:{s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:29:\"w.org/plugins/acf-to-rest-api\";s:4:\"slug\";s:15:\"acf-to-rest-api\";s:6:\"plugin\";s:41:\"acf-to-rest-api/class-acf-to-rest-api.php\";s:11:\"new_version\";s:5:\"3.1.0\";s:3:\"url\";s:46:\"https://wordpress.org/plugins/acf-to-rest-api/\";s:7:\"package\";s:64:\"https://downloads.wordpress.org/plugin/acf-to-rest-api.3.1.0.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:68:\"https://ps.w.org/acf-to-rest-api/assets/icon-256x256.jpg?rev=1752896\";s:2:\"1x\";s:68:\"https://ps.w.org/acf-to-rest-api/assets/icon-128x128.jpg?rev=1752896\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:71:\"https://ps.w.org/acf-to-rest-api/assets/banner-1544x500.jpg?rev=1752896\";s:2:\"1x\";s:70:\"https://ps.w.org/acf-to-rest-api/assets/banner-772x250.jpg?rev=1752896\";}s:11:\"banners_rtl\";a:0:{}}s:27:\"redis-cache/redis-cache.php\";O:8:\"stdClass\":9:{s:2:\"id\";s:25:\"w.org/plugins/redis-cache\";s:4:\"slug\";s:11:\"redis-cache\";s:6:\"plugin\";s:27:\"redis-cache/redis-cache.php\";s:11:\"new_version\";s:5:\"1.4.3\";s:3:\"url\";s:42:\"https://wordpress.org/plugins/redis-cache/\";s:7:\"package\";s:60:\"https://downloads.wordpress.org/plugin/redis-cache.1.4.3.zip\";s:5:\"icons\";a:2:{s:2:\"2x\";s:64:\"https://ps.w.org/redis-cache/assets/icon-256x256.png?rev=1025599\";s:2:\"1x\";s:64:\"https://ps.w.org/redis-cache/assets/icon-128x128.png?rev=1025599\";}s:7:\"banners\";a:2:{s:2:\"2x\";s:67:\"https://ps.w.org/redis-cache/assets/banner-1544x500.png?rev=1025599\";s:2:\"1x\";s:66:\"https://ps.w.org/redis-cache/assets/banner-772x250.png?rev=1025599\";}s:11:\"banners_rtl\";a:0:{}}}}', 'no'),
-(176, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1560294825;s:7:\"checked\";a:1:{s:8:\"no-front\";s:3:\"1.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no');
+(176, '_site_transient_update_themes', 'O:8:\"stdClass\":4:{s:12:\"last_checked\";i:1560294825;s:7:\"checked\";a:1:{s:8:\"no-front\";s:3:\"1.0\";}s:8:\"response\";a:0:{}s:12:\"translations\";a:0:{}}', 'no'),
+(178, 'wpcf7', 'a:2:{s:7:\"version\";s:5:\"5.1.3\";s:13:\"bulk_validate\";a:4:{s:9:\"timestamp\";d:1560336083;s:7:\"version\";s:5:\"5.1.3\";s:11:\"count_valid\";i:1;s:13:\"count_invalid\";i:0;}}', 'yes'),
+(179, 'nav_menu_options', 'a:2:{i:0;b:0;s:8:\"auto_add\";a:0:{}}', 'yes');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_postmeta`
+-- Estructura de tabla para la tabla `kibo_postmeta`
 --
 
 DROP TABLE IF EXISTS `kibo_postmeta`;
@@ -296,10 +298,10 @@ CREATE TABLE IF NOT EXISTS `kibo_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_postmeta`
+-- Volcado de datos para la tabla `kibo_postmeta`
 --
 
 INSERT INTO `kibo_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
@@ -308,19 +310,19 @@ INSERT INTO `kibo_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VAL
 (5, 7, '_edit_last', '1'),
 (6, 7, '_edit_lock', '1560289514:1'),
 (7, 8, '_edit_last', '1'),
-(8, 8, '_edit_lock', '1560294650:1'),
+(8, 8, '_edit_lock', '1560330517:1'),
 (9, 9, '_edit_last', '1'),
-(10, 9, '_edit_lock', '1560292427:1'),
+(10, 9, '_edit_lock', '1560330294:1'),
 (11, 12, '_edit_last', '1'),
-(12, 12, '_edit_lock', '1560292454:1'),
+(12, 12, '_edit_lock', '1560330378:1'),
 (13, 15, '_edit_last', '1'),
-(14, 15, '_edit_lock', '1560292485:1'),
+(14, 15, '_edit_lock', '1560330404:1'),
 (15, 18, '_edit_last', '1'),
-(16, 18, '_edit_lock', '1560292504:1'),
+(16, 18, '_edit_lock', '1560330524:1'),
 (17, 20, '_edit_last', '1'),
-(18, 20, '_edit_lock', '1560292529:1'),
+(18, 20, '_edit_lock', '1560330558:1'),
 (19, 23, '_edit_last', '1'),
-(20, 23, '_edit_lock', '1560292686:1'),
+(20, 23, '_edit_lock', '1560330109:1'),
 (21, 8, 'bi-texto', 'Set Up'),
 (22, 8, '_bi-texto', 'field_5d0021fded5da'),
 (23, 8, 'bi-background', ''),
@@ -341,15 +343,92 @@ INSERT INTO `kibo_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VAL
 (38, 8, '_bv-texto', 'field_5d0024e4cc6c0'),
 (39, 8, 'bvi-subtitulo', ''),
 (40, 8, '_bvi-subtitulo', 'field_5d00254485e0d'),
-(41, 8, 'bi_texto', 'Test'),
+(41, 8, 'bi_texto', '<p class=\"p1\"><span class=\"s1\">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</span></p>'),
 (42, 8, '_bi_texto', 'field_5d0021fded5da'),
 (43, 8, 'bi_background', ''),
-(44, 8, '_bi_background', 'field_5d00224bed5db');
+(44, 8, '_bi_background', 'field_5d00224bed5db'),
+(45, 8, 'bii_texto', '<p class=\"p1\"><span class=\"s1\">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima.</span></p>\r\n<p class=\"p1\"><span class=\"s1\">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eiu.</span></p>'),
+(46, 8, '_bii_texto', 'field_5d00231890f15'),
+(47, 8, 'bii_background', ''),
+(48, 8, '_bii_background', 'field_5d00233290f16'),
+(49, 8, 'biii_captura_del_player', ''),
+(50, 8, '_biii_captura_del_player', 'field_5d002396f04f5'),
+(51, 8, 'biii_video', ''),
+(52, 8, '_biii_video', 'field_5d0023b5f04f6'),
+(53, 8, 'biv_galeria', ''),
+(54, 8, '_biv_galeria', 'field_5d00242ec4ce2'),
+(55, 8, 'bv_subtitulo', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eiu.'),
+(56, 8, '_bv_subtitulo', 'field_5d0024d0cc6bf'),
+(57, 8, 'bv_texto', '<p class=\"p1\"><span class=\"s1\">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eiu. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eiu.</span></p>\r\n<p class=\"p1\"><span class=\"s1\">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eiu.</span></p>'),
+(58, 8, '_bv_texto', 'field_5d0024e4cc6c0'),
+(59, 8, 'bvi_subtitulo', 'Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit, sed quia non numquam eiu.'),
+(60, 8, '_bvi_subtitulo', 'field_5d00254485e0d'),
+(61, 25, '_form', '[text your-input-i]\n\n[email your-input-ii]\n\n[text your-input-iii]\n\n[submit \"Enviar\"]'),
+(62, 25, '_mail', 'a:9:{s:6:\"active\";b:1;s:7:\"subject\";s:26:\"Kibo TEST \"[your-input-i]\"\";s:6:\"sender\";s:30:\"Kibo TEST <info@dojo-plus.com>\";s:9:\"recipient\";s:18:\"info@dojo-plus.com\";s:4:\"body\";s:123:\"Input 1: [your-input-i] \nInput 2: [your-input-ii]\n\nInput 3:\n[your-input-iii]\n\n-- \nMensaje enviado a través de la API de WP\";s:18:\"additional_headers\";s:19:\"Cc: [your-input-ii]\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
+(63, 25, '_mail_2', 'a:9:{s:6:\"active\";b:0;s:7:\"subject\";s:26:\"Kibo TEST \"[your-subject]\"\";s:6:\"sender\";s:30:\"Kibo TEST <info@dojo-plus.com>\";s:9:\"recipient\";s:12:\"[your-email]\";s:4:\"body\";s:134:\"Cuerpo del mensaje:\n[your-message]\n\n-- \nEste mensaje se ha enviado desde un formulario de contacto en Kibo TEST (http://localhost/app)\";s:18:\"additional_headers\";s:28:\"Reply-To: info@dojo-plus.com\";s:11:\"attachments\";s:0:\"\";s:8:\"use_html\";b:0;s:13:\"exclude_blank\";b:0;}'),
+(64, 25, '_messages', 'a:23:{s:12:\"mail_sent_ok\";s:40:\"Gracias por tu mensaje. Ha sido enviado.\";s:12:\"mail_sent_ng\";s:85:\"Hubo un error intentando enviar tu mensaje. Por favor inténtalo de nuevo más tarde.\";s:16:\"validation_error\";s:74:\"Uno o más campos tienen un error. Por favor revisa e inténtalo de nuevo.\";s:4:\"spam\";s:85:\"Hubo un error intentando enviar tu mensaje. Por favor inténtalo de nuevo más tarde.\";s:12:\"accept_terms\";s:69:\"Debes aceptar los términos y condiciones antes de enviar tu mensaje.\";s:16:\"invalid_required\";s:24:\"El campo es obligatorio.\";s:16:\"invalid_too_long\";s:28:\"El campo es demasiado largo.\";s:17:\"invalid_too_short\";s:28:\"El campo es demasiado corto.\";s:12:\"invalid_date\";s:34:\"El formato de fecha es incorrecto.\";s:14:\"date_too_early\";s:50:\"La fecha es anterior a la más temprana permitida.\";s:13:\"date_too_late\";s:50:\"La fecha es posterior a la más tardía permitida.\";s:13:\"upload_failed\";s:46:\"Hubo un error desconocido subiendo el archivo.\";s:24:\"upload_file_type_invalid\";s:52:\"No tienes permisos para subir archivos de este tipo.\";s:21:\"upload_file_too_large\";s:31:\"El archivo es demasiado grande.\";s:23:\"upload_failed_php_error\";s:43:\"Se ha producido un error subiendo la imagen\";s:14:\"invalid_number\";s:36:\"El formato de número no es válido.\";s:16:\"number_too_small\";s:45:\"El número es menor que el mínimo permitido.\";s:16:\"number_too_large\";s:45:\"El número es mayor que el máximo permitido.\";s:23:\"quiz_answer_not_correct\";s:44:\"La respuesta al cuestionario no es correcta.\";s:17:\"captcha_not_match\";s:37:\"El código introducido es incorrecto.\";s:13:\"invalid_email\";s:71:\"La dirección de correo electrónico que has introducido no es válida.\";s:11:\"invalid_url\";s:21:\"La URL no es válida.\";s:11:\"invalid_tel\";s:38:\"El número de teléfono no es válido.\";}'),
+(65, 25, '_additional_settings', ''),
+(66, 25, '_locale', 'es_ES'),
+(71, 25, '_config_errors', 'a:1:{s:23:\"mail.additional_headers\";a:1:{i:0;a:2:{s:4:\"code\";i:102;s:4:\"args\";a:3:{s:7:\"message\";s:39:\"Sintaxis incorrecta en el campo %name%.\";s:6:\"params\";a:1:{s:4:\"name\";s:2:\"Cc\";}s:4:\"link\";s:68:\"https://contactform7.com/configuration-errors/invalid-mailbox-syntax\";}}}}'),
+(72, 8, 'bi_titulo', '<strong>LOREM</strong> IMSUM'),
+(73, 8, '_bi_titulo', 'field_5d00beea102c2'),
+(74, 8, 'bii_titulo', '<strong>LOREM</strong> IPSUM'),
+(75, 8, '_bii_titulo', 'field_5d00c03d513a7'),
+(76, 8, 'biii_titulo', 'DOLOR <strong>ASIMET</strong>'),
+(77, 8, '_biii_titulo', 'field_5d00c0cd4a1db'),
+(78, 29, '_menu_item_type', 'custom'),
+(79, 29, '_menu_item_menu_item_parent', '0'),
+(80, 29, '_menu_item_object_id', '29'),
+(81, 29, '_menu_item_object', 'custom'),
+(82, 29, '_menu_item_target', ''),
+(83, 29, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(84, 29, '_menu_item_xfn', ''),
+(85, 29, '_menu_item_url', '#'),
+(87, 30, '_menu_item_type', 'custom'),
+(88, 30, '_menu_item_menu_item_parent', '0'),
+(89, 30, '_menu_item_object_id', '30'),
+(90, 30, '_menu_item_object', 'custom'),
+(91, 30, '_menu_item_target', ''),
+(92, 30, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(93, 30, '_menu_item_xfn', ''),
+(94, 30, '_menu_item_url', '#'),
+(96, 31, '_menu_item_type', 'custom'),
+(97, 31, '_menu_item_menu_item_parent', '0'),
+(98, 31, '_menu_item_object_id', '31'),
+(99, 31, '_menu_item_object', 'custom'),
+(100, 31, '_menu_item_target', ''),
+(101, 31, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(102, 31, '_menu_item_xfn', ''),
+(103, 31, '_menu_item_url', '#'),
+(105, 32, '_menu_item_type', 'custom'),
+(106, 32, '_menu_item_menu_item_parent', '0'),
+(107, 32, '_menu_item_object_id', '32'),
+(108, 32, '_menu_item_object', 'custom'),
+(109, 32, '_menu_item_target', ''),
+(110, 32, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(111, 32, '_menu_item_xfn', ''),
+(112, 32, '_menu_item_url', '#'),
+(114, 33, '_menu_item_type', 'custom'),
+(115, 33, '_menu_item_menu_item_parent', '0'),
+(116, 33, '_menu_item_object_id', '33'),
+(117, 33, '_menu_item_object', 'custom'),
+(118, 33, '_menu_item_target', ''),
+(119, 33, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(120, 33, '_menu_item_xfn', ''),
+(121, 33, '_menu_item_url', '#'),
+(123, 34, '_menu_item_type', 'custom'),
+(124, 34, '_menu_item_menu_item_parent', '0'),
+(125, 34, '_menu_item_object_id', '34'),
+(126, 34, '_menu_item_object', 'custom'),
+(127, 34, '_menu_item_target', ''),
+(128, 34, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
+(129, 34, '_menu_item_xfn', ''),
+(130, 34, '_menu_item_url', '#');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_posts`
+-- Estructura de tabla para la tabla `kibo_posts`
 --
 
 DROP TABLE IF EXISTS `kibo_posts`;
@@ -382,10 +461,10 @@ CREATE TABLE IF NOT EXISTS `kibo_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_posts`
+-- Volcado de datos para la tabla `kibo_posts`
 --
 
 INSERT INTO `kibo_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
@@ -395,28 +474,38 @@ INSERT INTO `kibo_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `po
 (4, 1, '2019-06-11 17:22:02', '0000-00-00 00:00:00', '', 'Borrador automático', '', 'auto-draft', 'open', 'open', '', '', '', '', '2019-06-11 17:22:02', '0000-00-00 00:00:00', '', 0, 'http://localhost/app/?p=4', 0, 'post', '', 0),
 (6, 1, '2019-06-11 23:46:11', '0000-00-00 00:00:00', '', 'Borrador automático', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2019-06-11 23:46:11', '0000-00-00 00:00:00', '', 0, 'http://localhost/app/?post_type=html5-blank&p=6', 0, 'html5-blank', '', 0),
 (7, 1, '2019-06-11 23:46:48', '2019-06-11 21:46:48', '', 'My Home', '', 'publish', 'closed', 'closed', '', 'my-home', '', '', '2019-06-11 23:46:48', '2019-06-11 21:46:48', '', 0, 'http://localhost/app/?post_type=html5-blank&#038;p=7', 0, 'html5-blank', '', 0),
-(8, 1, '2019-06-11 23:48:16', '2019-06-11 21:48:16', '', 'MyHome', '', 'publish', 'closed', 'closed', '', 'myhome', '', '', '2019-06-12 00:30:38', '2019-06-11 22:30:38', '', 0, 'http://localhost/app/?post_type=home-blocks&#038;p=8', 0, 'home-blocks', '', 0),
-(9, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";a:14:{i:0;s:9:\"permalink\";i:1;s:11:\"the_content\";i:2;s:7:\"excerpt\";i:3;s:10:\"discussion\";i:4;s:8:\"comments\";i:5;s:9:\"revisions\";i:6;s:4:\"slug\";i:7;s:6:\"author\";i:8;s:6:\"format\";i:9;s:15:\"page_attributes\";i:10;s:14:\"featured_image\";i:11;s:10:\"categories\";i:12;s:4:\"tags\";i:13;s:15:\"send-trackbacks\";}s:11:\"description\";s:22:\"Contenido del Bloque I\";}', 'Bloque I', 'bloque-i', 'publish', 'closed', 'closed', '', 'group_5d0021b0be574', '', '', '2019-06-12 00:29:58', '2019-06-11 22:29:58', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=9', 0, 'acf-field-group', '', 0),
-(10, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:1;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bi_texto', 'publish', 'closed', 'closed', '', 'field_5d0021fded5da', '', '', '2019-06-12 00:29:58', '2019-06-11 22:29:58', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=10', 0, 'acf-field', '', 0),
-(11, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Background', 'bi_background', 'publish', 'closed', 'closed', '', 'field_5d00224bed5db', '', '', '2019-06-12 00:29:58', '2019-06-11 22:29:58', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=11', 1, 'acf-field', '', 0),
-(12, 1, '2019-06-11 23:52:41', '2019-06-11 21:52:41', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque II\";}', 'Bloque II', 'bloque-ii', 'publish', 'closed', 'closed', '', 'group_5d002290f1dbc', '', '', '2019-06-12 00:36:31', '2019-06-11 22:36:31', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=12', 0, 'acf-field-group', '', 0),
-(13, 1, '2019-06-11 23:55:22', '2019-06-11 21:55:22', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bii_texto', 'publish', 'closed', 'closed', '', 'field_5d00231890f15', '', '', '2019-06-12 00:36:31', '2019-06-11 22:36:31', '', 12, 'http://localhost/app/?post_type=acf-field&#038;p=13', 0, 'acf-field', '', 0),
-(14, 1, '2019-06-11 23:55:22', '2019-06-11 21:55:22', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Background', 'bii_background', 'publish', 'closed', 'closed', '', 'field_5d00233290f16', '', '', '2019-06-12 00:36:31', '2019-06-11 22:36:31', '', 12, 'http://localhost/app/?post_type=acf-field&#038;p=14', 1, 'acf-field', '', 0),
-(15, 1, '2019-06-11 23:56:36', '2019-06-11 21:56:36', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:24:\"Contenidos de Bloque III\";}', 'Bloque III', 'bloque-iii', 'publish', 'closed', 'closed', '', 'group_5d00237f3c46d', '', '', '2019-06-12 00:37:04', '2019-06-11 22:37:04', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=15', 0, 'acf-field-group', '', 0),
-(16, 1, '2019-06-11 23:57:42', '2019-06-11 21:57:42', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Captura del Player', 'biii_captura_del_player', 'publish', 'closed', 'closed', '', 'field_5d002396f04f5', '', '', '2019-06-12 00:37:04', '2019-06-11 22:37:04', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=16', 0, 'acf-field', '', 0),
-(17, 1, '2019-06-11 23:57:42', '2019-06-11 21:57:42', 'a:10:{s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";}', 'Video', 'biii_video', 'publish', 'closed', 'closed', '', 'field_5d0023b5f04f6', '', '', '2019-06-12 00:37:04', '2019-06-11 22:37:04', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=17', 1, 'acf-field', '', 0),
+(8, 1, '2019-06-11 23:48:16', '2019-06-11 21:48:16', '', 'MyHome', '', 'publish', 'closed', 'closed', '', 'myhome', '', '', '2019-06-12 11:08:36', '2019-06-12 09:08:36', '', 0, 'http://localhost/app/?post_type=home-blocks&#038;p=8', 0, 'home-blocks', '', 0),
+(9, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";a:14:{i:0;s:9:\"permalink\";i:1;s:11:\"the_content\";i:2;s:7:\"excerpt\";i:3;s:10:\"discussion\";i:4;s:8:\"comments\";i:5;s:9:\"revisions\";i:6;s:4:\"slug\";i:7;s:6:\"author\";i:8;s:6:\"format\";i:9;s:15:\"page_attributes\";i:10;s:14:\"featured_image\";i:11;s:10:\"categories\";i:12;s:4:\"tags\";i:13;s:15:\"send-trackbacks\";}s:11:\"description\";s:22:\"Contenido del Bloque I\";}', 'Bloque I', 'bloque-i', 'publish', 'closed', 'closed', '', 'group_5d0021b0be574', '', '', '2019-06-12 11:00:45', '2019-06-12 09:00:45', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=9', 0, 'acf-field-group', '', 0),
+(10, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:1;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bi_texto', 'publish', 'closed', 'closed', '', 'field_5d0021fded5da', '', '', '2019-06-12 11:00:38', '2019-06-12 09:00:38', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=10', 1, 'acf-field', '', 0),
+(11, 1, '2019-06-11 23:51:42', '2019-06-11 21:51:42', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Background', 'bi_background', 'publish', 'closed', 'closed', '', 'field_5d00224bed5db', '', '', '2019-06-12 11:00:38', '2019-06-12 09:00:38', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=11', 2, 'acf-field', '', 0),
+(12, 1, '2019-06-11 23:52:41', '2019-06-11 21:52:41', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque II\";}', 'Bloque II', 'bloque-ii', 'publish', 'closed', 'closed', '', 'group_5d002290f1dbc', '', '', '2019-06-12 11:06:10', '2019-06-12 09:06:10', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=12', 0, 'acf-field-group', '', 0),
+(13, 1, '2019-06-11 23:55:22', '2019-06-11 21:55:22', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bii_texto', 'publish', 'closed', 'closed', '', 'field_5d00231890f15', '', '', '2019-06-12 11:06:10', '2019-06-12 09:06:10', '', 12, 'http://localhost/app/?post_type=acf-field&#038;p=13', 1, 'acf-field', '', 0),
+(14, 1, '2019-06-11 23:55:22', '2019-06-11 21:55:22', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Background', 'bii_background', 'publish', 'closed', 'closed', '', 'field_5d00233290f16', '', '', '2019-06-12 11:06:10', '2019-06-12 09:06:10', '', 12, 'http://localhost/app/?post_type=acf-field&#038;p=14', 2, 'acf-field', '', 0),
+(15, 1, '2019-06-11 23:56:36', '2019-06-11 21:56:36', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:24:\"Contenidos de Bloque III\";}', 'Bloque III', 'bloque-iii', 'publish', 'closed', 'closed', '', 'group_5d00237f3c46d', '', '', '2019-06-12 11:08:15', '2019-06-12 09:08:15', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=15', 0, 'acf-field-group', '', 0),
+(16, 1, '2019-06-11 23:57:42', '2019-06-11 21:57:42', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Captura del Player', 'biii_captura_del_player', 'publish', 'closed', 'closed', '', 'field_5d002396f04f5', '', '', '2019-06-12 11:08:15', '2019-06-12 09:08:15', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=16', 1, 'acf-field', '', 0),
+(17, 1, '2019-06-11 23:57:42', '2019-06-11 21:57:42', 'a:10:{s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";}', 'Video', 'biii_video', 'publish', 'closed', 'closed', '', 'field_5d0023b5f04f6', '', '', '2019-06-12 11:08:15', '2019-06-12 09:08:15', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=17', 2, 'acf-field', '', 0),
 (18, 1, '2019-06-11 23:59:07', '2019-06-11 21:59:07', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque IV\";}', 'Bloque IV', 'bloque-iv', 'publish', 'closed', 'closed', '', 'group_5d0024101d3bd', '', '', '2019-06-12 00:37:20', '2019-06-11 22:37:20', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=18', 0, 'acf-field-group', '', 0),
 (19, 1, '2019-06-11 23:59:56', '2019-06-11 21:59:56', 'a:16:{s:4:\"type\";s:7:\"gallery\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:3:\"min\";s:0:\"\";s:3:\"max\";s:0:\"\";s:6:\"insert\";s:6:\"append\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Galería', 'biv_galeria', 'publish', 'closed', 'closed', '', 'field_5d00242ec4ce2', '', '', '2019-06-12 00:37:20', '2019-06-11 22:37:20', '', 18, 'http://localhost/app/?post_type=acf-field&#038;p=19', 0, 'acf-field', '', 0),
 (20, 1, '2019-06-12 00:02:43', '2019-06-11 22:02:43', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:22:\"Contenidos de Bloque V\";}', 'Bloque V', 'bloque-v', 'publish', 'closed', 'closed', '', 'group_5d0024c1bb21e', '', '', '2019-06-12 00:37:48', '2019-06-11 22:37:48', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=20', 0, 'acf-field-group', '', 0),
 (21, 1, '2019-06-12 00:02:43', '2019-06-11 22:02:43', 'a:10:{s:4:\"type\";s:8:\"textarea\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:4:\"rows\";s:0:\"\";s:9:\"new_lines\";s:0:\"\";}', 'Subtitulo', 'bv_subtitulo', 'publish', 'closed', 'closed', '', 'field_5d0024d0cc6bf', '', '', '2019-06-12 00:37:48', '2019-06-11 22:37:48', '', 20, 'http://localhost/app/?post_type=acf-field&#038;p=21', 0, 'acf-field', '', 0),
 (22, 1, '2019-06-12 00:02:43', '2019-06-11 22:02:43', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Texto', 'bv_texto', 'publish', 'closed', 'closed', '', 'field_5d0024e4cc6c0', '', '', '2019-06-12 00:37:48', '2019-06-11 22:37:48', '', 20, 'http://localhost/app/?post_type=acf-field&#038;p=22', 1, 'acf-field', '', 0),
-(23, 1, '2019-06-12 00:04:13', '2019-06-11 22:04:13', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque VI\";}', 'Bloque VI', 'bloque-vi', 'publish', 'closed', 'closed', '', 'group_5d00253cd9b22', '', '', '2019-06-12 00:38:05', '2019-06-11 22:38:05', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=23', 0, 'acf-field-group', '', 0),
-(24, 1, '2019-06-12 00:04:13', '2019-06-11 22:04:13', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Subtitulo', 'bvi_subtitulo', 'publish', 'closed', 'closed', '', 'field_5d00254485e0d', '', '', '2019-06-12 00:38:05', '2019-06-11 22:38:05', '', 23, 'http://localhost/app/?post_type=acf-field&#038;p=24', 0, 'acf-field', '', 0);
+(23, 1, '2019-06-12 00:04:13', '2019-06-11 22:04:13', 'a:7:{s:8:\"location\";a:1:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:11:\"home-blocks\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";s:0:\"\";s:11:\"description\";s:23:\"Contenidos de Bloque VI\";}', 'Bloque VI', 'bloque-vi', 'publish', 'closed', 'closed', '', 'group_5d00253cd9b22', '', '', '2019-06-12 10:36:01', '2019-06-12 08:36:01', '', 0, 'http://localhost/app/?post_type=acf-field-group&#038;p=23', 0, 'acf-field-group', '', 0),
+(24, 1, '2019-06-12 00:04:13', '2019-06-11 22:04:13', 'a:10:{s:4:\"type\";s:8:\"textarea\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";s:4:\"rows\";s:0:\"\";s:9:\"new_lines\";s:0:\"\";}', 'Subtitulo', 'bvi_subtitulo', 'publish', 'closed', 'closed', '', 'field_5d00254485e0d', '', '', '2019-06-12 10:36:01', '2019-06-12 08:36:01', '', 23, 'http://localhost/app/?post_type=acf-field&#038;p=24', 0, 'acf-field', '', 0),
+(25, 1, '2019-06-12 10:41:23', '2019-06-12 08:41:23', '[text your-input-i]\r\n\r\n[email your-input-ii]\r\n\r\n[text your-input-iii]\r\n\r\n[submit \"Enviar\"]\n1\nKibo TEST \"[your-input-i]\"\nKibo TEST <info@dojo-plus.com>\ninfo@dojo-plus.com\nInput 1: [your-input-i] \r\nInput 2: [your-input-ii]\r\n\r\nInput 3:\r\n[your-input-iii]\r\n\r\n-- \r\nMensaje enviado a través de la API de WP\nCc: [your-input-ii]\n\n\n\n\nKibo TEST \"[your-subject]\"\nKibo TEST <info@dojo-plus.com>\n[your-email]\nCuerpo del mensaje:\r\n[your-message]\r\n\r\n-- \r\nEste mensaje se ha enviado desde un formulario de contacto en Kibo TEST (http://localhost/app)\nReply-To: info@dojo-plus.com\n\n\n\nGracias por tu mensaje. Ha sido enviado.\nHubo un error intentando enviar tu mensaje. Por favor inténtalo de nuevo más tarde.\nUno o más campos tienen un error. Por favor revisa e inténtalo de nuevo.\nHubo un error intentando enviar tu mensaje. Por favor inténtalo de nuevo más tarde.\nDebes aceptar los términos y condiciones antes de enviar tu mensaje.\nEl campo es obligatorio.\nEl campo es demasiado largo.\nEl campo es demasiado corto.\nEl formato de fecha es incorrecto.\nLa fecha es anterior a la más temprana permitida.\nLa fecha es posterior a la más tardía permitida.\nHubo un error desconocido subiendo el archivo.\nNo tienes permisos para subir archivos de este tipo.\nEl archivo es demasiado grande.\nSe ha producido un error subiendo la imagen\nEl formato de número no es válido.\nEl número es menor que el mínimo permitido.\nEl número es mayor que el máximo permitido.\nLa respuesta al cuestionario no es correcta.\nEl código introducido es incorrecto.\nLa dirección de correo electrónico que has introducido no es válida.\nLa URL no es válida.\nEl número de teléfono no es válido.', 'Formulario de Contacto - WPAPI', '', 'publish', 'closed', 'closed', '', 'formulario-de-contacto-1', '', '', '2019-06-12 10:56:19', '2019-06-12 08:56:19', '', 0, 'http://localhost/app/?post_type=wpcf7_contact_form&#038;p=25', 0, 'wpcf7_contact_form', '', 0),
+(26, 1, '2019-06-12 11:00:38', '2019-06-12 09:00:38', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:72:\"Marca en negrita, el fragmento de texto que queramos detectar en \"Black\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:6:\"visual\";s:7:\"toolbar\";s:5:\"basic\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', 'Titulo', 'bi_titulo', 'publish', 'closed', 'closed', '', 'field_5d00beea102c2', '', '', '2019-06-12 11:00:45', '2019-06-12 09:00:45', '', 9, 'http://localhost/app/?post_type=acf-field&#038;p=26', 0, 'acf-field', '', 0),
+(27, 1, '2019-06-12 11:06:10', '2019-06-12 09:06:10', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:51:\"Marca en negrita el fragmento que queramos en Black\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:6:\"visual\";s:7:\"toolbar\";s:5:\"basic\";s:12:\"media_upload\";i:0;s:5:\"delay\";i:0;}', 'Título', 'bii_titulo', 'publish', 'closed', 'closed', '', 'field_5d00c03d513a7', '', '', '2019-06-12 11:06:10', '2019-06-12 09:06:10', '', 12, 'http://localhost/app/?post_type=acf-field&p=27', 0, 'acf-field', '', 0),
+(28, 1, '2019-06-12 11:08:06', '2019-06-12 09:08:06', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:52:\"Marcar en negrita el fragmento que queramos en Black\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:6:\"visual\";s:7:\"toolbar\";s:5:\"basic\";s:12:\"media_upload\";i:0;s:5:\"delay\";i:0;}', 'Título', 'biii_titulo', 'publish', 'closed', 'closed', '', 'field_5d00c0cd4a1db', '', '', '2019-06-12 11:08:15', '2019-06-12 09:08:15', '', 15, 'http://localhost/app/?post_type=acf-field&#038;p=28', 0, 'acf-field', '', 0),
+(29, 1, '2019-06-12 11:59:13', '2019-06-12 09:59:13', '', 'Inicio', '', 'publish', 'closed', 'closed', '', 'inicio', '', '', '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 0, 'http://localhost/app/?p=29', 1, 'nav_menu_item', '', 0),
+(30, 1, '2019-06-12 11:59:13', '2019-06-12 09:59:13', '', 'Enlace I', '', 'publish', 'closed', 'closed', '', 'enlace-i', '', '', '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 0, 'http://localhost/app/?p=30', 2, 'nav_menu_item', '', 0),
+(31, 1, '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 'Enlace II', '', 'publish', 'closed', 'closed', '', 'enlace-ii', '', '', '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 0, 'http://localhost/app/?p=31', 3, 'nav_menu_item', '', 0),
+(32, 1, '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 'Enlace III', '', 'publish', 'closed', 'closed', '', 'enlace-iii', '', '', '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 0, 'http://localhost/app/?p=32', 4, 'nav_menu_item', '', 0),
+(33, 1, '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 'Enlace IV', '', 'publish', 'closed', 'closed', '', 'enlace-iv', '', '', '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 0, 'http://localhost/app/?p=33', 5, 'nav_menu_item', '', 0),
+(34, 1, '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 'Enlace V', '', 'publish', 'closed', 'closed', '', 'enlace-v', '', '', '2019-06-12 12:01:47', '2019-06-12 10:01:47', '', 0, 'http://localhost/app/?p=34', 6, 'nav_menu_item', '', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_termmeta`
+-- Estructura de tabla para la tabla `kibo_termmeta`
 --
 
 DROP TABLE IF EXISTS `kibo_termmeta`;
@@ -433,7 +522,7 @@ CREATE TABLE IF NOT EXISTS `kibo_termmeta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_terms`
+-- Estructura de tabla para la tabla `kibo_terms`
 --
 
 DROP TABLE IF EXISTS `kibo_terms`;
@@ -445,19 +534,20 @@ CREATE TABLE IF NOT EXISTS `kibo_terms` (
   PRIMARY KEY (`term_id`),
   KEY `slug` (`slug`(191)),
   KEY `name` (`name`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_terms`
+-- Volcado de datos para la tabla `kibo_terms`
 --
 
 INSERT INTO `kibo_terms` (`term_id`, `name`, `slug`, `term_group`) VALUES
-(1, 'Sin categoría', 'sin-categoria', 0);
+(1, 'Sin categoría', 'sin-categoria', 0),
+(2, 'header-menu', 'header-menu', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_term_relationships`
+-- Estructura de tabla para la tabla `kibo_term_relationships`
 --
 
 DROP TABLE IF EXISTS `kibo_term_relationships`;
@@ -470,16 +560,22 @@ CREATE TABLE IF NOT EXISTS `kibo_term_relationships` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_term_relationships`
+-- Volcado de datos para la tabla `kibo_term_relationships`
 --
 
 INSERT INTO `kibo_term_relationships` (`object_id`, `term_taxonomy_id`, `term_order`) VALUES
-(1, 1, 0);
+(1, 1, 0),
+(29, 2, 0),
+(30, 2, 0),
+(31, 2, 0),
+(32, 2, 0),
+(33, 2, 0),
+(34, 2, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_term_taxonomy`
+-- Estructura de tabla para la tabla `kibo_term_taxonomy`
 --
 
 DROP TABLE IF EXISTS `kibo_term_taxonomy`;
@@ -493,19 +589,20 @@ CREATE TABLE IF NOT EXISTS `kibo_term_taxonomy` (
   PRIMARY KEY (`term_taxonomy_id`),
   UNIQUE KEY `term_id_taxonomy` (`term_id`,`taxonomy`),
   KEY `taxonomy` (`taxonomy`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_term_taxonomy`
+-- Volcado de datos para la tabla `kibo_term_taxonomy`
 --
 
 INSERT INTO `kibo_term_taxonomy` (`term_taxonomy_id`, `term_id`, `taxonomy`, `description`, `parent`, `count`) VALUES
-(1, 1, 'category', '', 0, 1);
+(1, 1, 'category', '', 0, 1),
+(2, 2, 'nav_menu', '', 0, 6);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_usermeta`
+-- Estructura de tabla para la tabla `kibo_usermeta`
 --
 
 DROP TABLE IF EXISTS `kibo_usermeta`;
@@ -517,10 +614,10 @@ CREATE TABLE IF NOT EXISTS `kibo_usermeta` (
   PRIMARY KEY (`umeta_id`),
   KEY `user_id` (`user_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_usermeta`
+-- Volcado de datos para la tabla `kibo_usermeta`
 --
 
 INSERT INTO `kibo_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALUES
@@ -539,21 +636,24 @@ INSERT INTO `kibo_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VA
 (13, 1, 'kibo_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:2:{s:64:\"35fd4df0a280471008a10d34451749f5fa7e01bc67db755e200a0d18f7cc3ce1\";a:4:{s:10:\"expiration\";i:1560439317;s:2:\"ip\";s:10:\"172.24.0.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560266517;}s:64:\"3a35a480ba11633ec3263d4712660c1b842dfc955f1377b60a528f5658ff5137\";a:4:{s:10:\"expiration\";i:1560461849;s:2:\"ip\";s:13:\"192.168.144.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560289049;}}'),
+(16, 1, 'session_tokens', 'a:3:{s:64:\"35fd4df0a280471008a10d34451749f5fa7e01bc67db755e200a0d18f7cc3ce1\";a:4:{s:10:\"expiration\";i:1560439317;s:2:\"ip\";s:10:\"172.24.0.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560266517;}s:64:\"3a35a480ba11633ec3263d4712660c1b842dfc955f1377b60a528f5658ff5137\";a:4:{s:10:\"expiration\";i:1560461849;s:2:\"ip\";s:13:\"192.168.144.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560289049;}s:64:\"f3581c944bbae90329e6a3d28e39e46ae5059052c4941499618d1fcf33a0d9d8\";a:4:{s:10:\"expiration\";i:1560499715;s:2:\"ip\";s:10:\"172.24.0.1\";s:2:\"ua\";s:139:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36 OPR/60.0.3255.160\";s:5:\"login\";i:1560326915;}}'),
 (17, 1, 'kibo_dashboard_quick_press_last_post_id', '4'),
-(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:13:\"192.168.144.0\";}'),
+(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:10:\"172.24.0.0\";}'),
 (19, 1, 'closedpostboxes_dashboard', 'a:4:{i:0;s:19:\"dashboard_right_now\";i:1;s:18:\"dashboard_activity\";i:2;s:21:\"dashboard_quick_press\";i:3;s:17:\"dashboard_primary\";}'),
 (20, 1, 'metaboxhidden_dashboard', 'a:0:{}'),
 (21, 1, 'kibo_user-settings', 'deleted=undefined&libraryContent=browse&editor=tinymce&hidetb=0&imgsize=full&posts_list_mode=list&align=left&uploader=1&post_dfw=off&editor_expand=off'),
 (22, 1, 'kibo_user-settings-time', '1560291125'),
 (23, 1, 'closedpostboxes_acf-field-group', 'a:0:{}'),
 (24, 1, 'metaboxhidden_acf-field-group', 'a:1:{i:0;s:7:\"slugdiv\";}'),
-(25, 1, 'edit_home-blocks_per_page', '20');
+(25, 1, 'edit_home-blocks_per_page', '20'),
+(26, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";i:4;s:15:\"title-attribute\";}'),
+(27, 1, 'metaboxhidden_nav-menus', 'a:2:{i:0;s:25:\"add-post-type-home-blocks\";i:1;s:12:\"add-post_tag\";}'),
+(28, 1, 'nav_menu_recently_edited', '2');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kibo_users`
+-- Estructura de tabla para la tabla `kibo_users`
 --
 
 DROP TABLE IF EXISTS `kibo_users`;
@@ -575,7 +675,7 @@ CREATE TABLE IF NOT EXISTS `kibo_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
--- Dumping data for table `kibo_users`
+-- Volcado de datos para la tabla `kibo_users`
 --
 
 INSERT INTO `kibo_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`) VALUES
