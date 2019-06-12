@@ -92,21 +92,6 @@ section {
     }
 }
 
-// background: #F2C478;
-/*
-<section id="home-bloque-3" class="fullwidth-section">
-
-    <div id="video-container" class="container">
-        <div id="video-mockup">
-            <img id="video-mockup-img" src="{{data.biii_mockup_img_url}}" />
-        </div>
-        <div id="video-button">
-            <span id="video-button-element" class="button">{{data.biii_button_text}}</span>
-        </div>
-    </div>
-
-</section>
-*/
 
 #home-bloque-3 {
     background-color: #F2C478;
@@ -128,10 +113,77 @@ section {
             }
         }
         #video-button {
-
+            margin-top: 30px;
+            display: block;
+            text-align: center;
             #video-button-element {
 
             }
         }
     }
+}
+
+
+/*
+<section id="home-bloque-4" class="fullscreen-section">
+
+    <div id="gallery-container">
+        <div id="imagen-seleccionada"></div>
+        <ul>
+            <li *ngFor="let item of data.biv_galeria; let i = index">
+                <a href="{{item.biv_imagen_galeria}}" [ngStyle]="{'background-image':'url(' + item.biv_imagen_galeria + ')'}"> </a>
+            </li>
+        </ul>
+    </div>
+
+</section>
+*/
+
+#home-bloque-4 {
+    overflow: hidden;
+    #gallery-container {
+        width : 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        #image-seleccionada {
+            width: 100%;
+            height: calc(100% - 150px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: none no-repeat center center scroll;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        #lista-galeria {
+
+            position: absolute;
+            left: 0;
+            top: calc(100% - 150px);
+            height: 150px;
+            width: 100vw;
+            .item-galeria {
+                height: 150px;
+                width: 200px;
+                position: relative;
+                display: inline-block;
+                .imagen-galeria {
+                    width: 100%;
+                    height: 100%;
+                    display: inline-block;
+                    background: none no-repeat center center scroll;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+
 }
