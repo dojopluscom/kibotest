@@ -2,19 +2,26 @@
 header {
     width: 100vw;
     position: fixed;
-    top: 0;
+    top: 35px;
     left: 0;
+    z-index: 9;
     > div {
+        height: 35px;
         > div {
+            height: 35px;
             &#logo-block {
+                float: left;
                 img {}
             }
             &#menu-block {
+                float: right;
                 ul {
-
+                    display: block;
                     li {
+                        vertical-align: middle;
                         list-style: none;
                         display: inline-block;
+                        margin-left: 60px;
                         a {
                             text-decoration: none;
                             text-transform: uppercase;
@@ -23,6 +30,7 @@ header {
                             font-size: 13px;
                             color: #000000;
                             letter-spacing: 0.2px;
+                            line-height: 35px;
                             text-align: left;
                         }
 

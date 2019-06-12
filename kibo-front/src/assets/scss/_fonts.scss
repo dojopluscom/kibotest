@@ -1,3 +1,43 @@
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('assets/fonts/Open_Sans/OpenSans-Regular.eot');
+    src: url('assets/fonts/Open_Sans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Open_Sans/OpenSans-Regular.woff2') format('woff2'),
+        url('assets/fonts/Open_Sans/OpenSans-Regular.woff') format('woff'),
+        url('assets/fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+        url('assets/fonts/Open_Sans/OpenSans-Regular.svg#Muli-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('assets/fonts/Poppins/Poppins-Light.eot');
+    src: url('assets/fonts/Poppins/Poppins-Light.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Poppins/Poppins-Light.woff2') format('woff2'),
+        url('assets/fonts/Poppins/Poppins-Light.woff') format('woff'),
+        url('assets/fonts/Poppins/Poppins-Light.ttf') format('truetype'),
+        url('assets/fonts/Poppins/Poppins-Light.svg#Muli-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url('assets/fonts/Poppins/Poppins-Black.eot');
+    src: url('assets/fonts/Poppins/Poppins-Black.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Poppins/Poppins-Black.woff2') format('woff2'),
+        url('assets/fonts/Poppins/Poppins-Black.woff') format('woff'),
+        url('assets/fonts/Poppins/Poppins-Black.ttf') format('truetype'),
+        url('assets/fonts/Poppins/Poppins-Black.svg#Muli-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
 /* @font-face {
     font-family: 'Muli';
     src: url('assets/fonts/Muli-Regular.eot');
