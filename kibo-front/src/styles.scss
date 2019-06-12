@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*------------------------------------*\
+    MAIN
+\*------------------------------------*/
+
+@import "assets/scss/variables";
+@import "assets/scss/decimals";
+@import "assets/scss/functions";
+@import "assets/scss/fonts";
+@import "assets/scss/reset";
+@import "assets/scss/normalize";
+
+:root {
+    --vh-offset: 0px;
+}
+
+html, body {
+    font-family: "Muli";
+    font-size: 14px;
+    overflow-x: hidden;
+
+}
+
+.container {
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}

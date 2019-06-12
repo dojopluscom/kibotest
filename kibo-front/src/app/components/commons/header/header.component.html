@@ -1,10 +1,14 @@
 <header>
-    <div id="logo-block"></div>
-    <div id="menu-block">
-        <ul>
-            <li *ngFor="let item of data; let i = index">
-                <a href="{{item.url}}">{{item.title}}</a>
-            </li>
-        </ul>
+    <div class="container">
+        <div id="logo-block">
+            <img src="./assets/img/commons/logo/dark.png">
+        </div>
+        <div id="menu-block">
+            <ul>
+                <li *ngFor="let item of data; let i = index">
+                    <a href="{{item.url}}">{{item.title}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>

@@ -1,2 +1,67 @@
 @import './../../../../assets/scss/decimals',
         './../../../../assets/scss/functions';
+
+
+//section id="home-bloque-1" class="fullscreen-section"
+/*
+
+<section id="home-bloque-1" class="fullscreen-section">
+    <div class="text-float">
+        <div class="text-title" [innerHTML]="data.bi_titulo"></div>
+        <div class="text-content" [innerHTML]="data.bi_texto"></div>
+    </div>
+    <div class="background-img" style="background-image:url('{{data.bi_bg_img_url}}');"></div>
+
+*/
+
+section {
+
+    .text-float {
+
+    }
+
+    &.fullscreen-section {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+}
+
+#home-bloque-1 {
+
+    .text-float {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include translate(-100%, -50%);
+        z-index: 2;
+        .text-title {
+            font-size: 80px;
+            color: #3A3A3A;
+            letter-spacing: 0.02px;
+            text-align: left;
+            line-height: 55px;
+            strong {
+
+            }
+        }
+        .text-content {
+            font-size: 20px;
+            color: #3A3A3A;
+            letter-spacing: -0.5px;
+            text-align: left;
+            line-height: 25.88px;
+        }
+
+    }
+
+    .background-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+}
