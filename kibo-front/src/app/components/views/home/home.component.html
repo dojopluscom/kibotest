@@ -1,23 +1,28 @@
 <section id="home-bloque-1" class="fullscreen-section">
     <div class="text-float">
-        <div class="text-title"></div>
+        <div class="text-title" [innerHTML]="data.bi_titulo"></div>
         <div class="text-content" [innerHTML]="data.bi_texto"></div>
     </div>
-    <div class="background-img"></div>
+    <div class="background-img" style="background-image:url('{{data.bi_bg_img_url}}');"></div>
 </section>
 
 <section id="home-bloque-2" class="fullwidth-section">
     <div class="container">
-        <div class="text-title"></div>
+        <div class="text-title" [innerHTML]="data.bii_titulo"></div>
         <div class="text-content" [innerHTML]="data.bii_texto"></div>
     </div>
+    <div class="background-img" style="background-image:url('{{data.bi_bg_img_url}}');"></div>
 </section>
 
 <section id="home-bloque-3" class="fullwidth-section">
 
     <div id="video-container" class="container">
-        <div id="video-mockup"></div>
-        <div id="video-button"></div>
+        <div id="video-mockup">
+            <img src="{{data.biii_mockup_img_url}}" />
+        </div>
+        <div id="video-button">
+            <span class="button">{{data.biii_button_text}}</span>
+        </div>
     </div>
 
 </section>
@@ -33,7 +38,7 @@
 <section id="home-bloque-5" class="fullwidth-section">
 
     <div class="container">
-        <div class="text-title"></div>
+        <div class="text-title" [innerHTML]="data.bv_titulo"></div>
         <div class="text-subtitle">{{data.bv_subtitulo}}</div>
         <div class="text-content" [innerHTML]="data.bv_texto"></div>
     </div>
@@ -43,7 +48,35 @@
 <section id="home-bloque-5" class="fullwidth-section">
 
     <div id="formulario-container" class="container">
-
+        <div class="text-title" [innerHTML]="data.bvi_titulo"></div>
+        <div class="text-subtitle">{{data.bvi_subtitulo}}</div>
+        <div class="share">
+            <ul>
+                <li>
+                    <a href="{{data.bv_social_fb}}" target="_blank" rel="no-referal"></a>
+                </li>
+                <li>
+                    <a href="{{data.bv_social_tw}}" target="_blank" rel="no-referal"></a>
+                </li>
+                <li>
+                    <a href="{{data.bv_social_in}}" target="_blank" rel="no-referal"></a>
+                </li>
+            </ul>
+        </div>
+        <form>
+            <fieldset class="dos-columnas">
+                <input type="text" value="" name="your-input-i" id="your-input-i" placeholder="{{data.bvi_input_i_placeholder}}"/>
+            </fieldset>
+            <fieldset class="dos-columnas">
+                <input type="text" value="" name="your-input-ii" id="your-input-ii" placeholder="{{data.bvi_input_ii_placeholder}}"/>
+            </fieldset>
+            <fieldset class="una-columna">
+                <input type="text" value="" name="your-input-iii" id="your-input-iii" placeholder="{{data.bvi_input_iii_placeholder}}"/>
+            </fieldset>
+            <fieldset class="una-columna">
+                <button class="button button-white">{{data.bvi_button_text}}</button>
+            </fieldset>
+        </form>
     </div>
 
 </section>
