@@ -3,6 +3,9 @@
         <div class="text-title" [innerHTML]="data.bi_titulo"></div>
         <div class="text-content" [innerHTML]="data.bi_texto"></div>
     </div>
+    <div class="icon-mouse">
+        <img src="./assets/img/commons/icons/mouse-scroll@2x.png" width="33" />
+    </div>
     <div class="background-img" [ngStyle]="{'background-image':'url(' + data.bi_background + ')'}"></div>
 </section>
 
@@ -35,12 +38,23 @@
 
     <div id="gallery-container">
         <div id="imagen-seleccionada"></div>
-        <ul id="lista-galeria">
-            <li class="item-galeria" *ngFor="let item of data.biv_galeria; let i = index">
-                <a class="imagen-galeria" href="{{item.biv_imagen_galeria}}" [ngStyle]="{'background-image':'url(' + item.biv_imagen_galeria + ')'}"> </a>
-            </li>
-        </ul>
+        <div id="lista-galeria">
+            <ngx-slick-carousel class="carousel" 
+                            #slickModal="slick-carousel" 
+                            [config]="slideConfig" 
+                            (init)="slickInit($event)"
+                            (breakpoint)="breakpoint($event)"
+                            (afterChange)="afterChange($event)"
+                            (beforeChange)="beforeChange($event)">
+            <div ngxSlickItem *ngFor="let item of data.biv_galeria" class="slide">
+                <img src="{{ item.biv_imagen_galeria }}" alt="" width="100%">
+            </div>
+            </ngx-slick-carousel>
+        </div>
     </div>
+
+    
+
 
 </section>
 
@@ -65,31 +79,31 @@
 
     <div id="formulario-container" class="container">
         <div class="text-title" [innerHTML]="data.bvi_titulo"></div>
-        <div class="text-subtitle">{{data.bvi_subtitulo}}</div>
+        <div class="text-subtitle" [innerHTML]="data.bvi_subtitulo"></div>
         <div class="share">
             <ul>
                 <li>
-                    <a href="{{data.bv_social_fb}}" target="_blank" rel="no-referal"></a>
+                    <a href="{{data.bv_social_fb}}" target="_blank" rel="no-referal"><img src="./assets/img/commons/social/facebook.svg" width="33" /></a>
                 </li>
                 <li>
-                    <a href="{{data.bv_social_tw}}" target="_blank" rel="no-referal"></a>
+                    <a href="{{data.bv_social_tw}}" target="_blank" rel="no-referal"><img src="./assets/img/commons/social/twitter.svg" width="33" /></a>
                 </li>
                 <li>
-                    <a href="{{data.bv_social_in}}" target="_blank" rel="no-referal"></a>
+                    <a href="{{data.bv_social_in}}" target="_blank" rel="no-referal"><img src="./assets/img/commons/social/instagram.svg" width="33" /></a>
                 </li>
             </ul>
         </div>
         <form>
             <fieldset class="dos-columnas">
-                <input type="text" value="" name="your-input-i" id="your-input-i" placeholder="{{data.bvi_input_i_placeholder}}"/>
-            </fieldset>
-            <fieldset class="dos-columnas">
-                <input type="text" value="" name="your-input-ii" id="your-input-ii" placeholder="{{data.bvi_input_ii_placeholder}}"/>
-            </fieldset>
-            <fieldset class="una-columna">
-                <input type="text" value="" name="your-input-iii" id="your-input-iii" placeholder="{{data.bvi_input_iii_placeholder}}"/>
-            </fieldset>
-            <fieldset class="una-columna">
+                <input type="text" value="" name="your-input-i" id="your-input-i" placeholder="Lorem ipsum"/>
+            </fieldset><!--
+            --><fieldset class="dos-columnas">
+                <input type="text" value="" name="your-input-ii" id="your-input-ii" placeholder="Lorem ipsum"/>
+            </fieldset><!--
+            --><fieldset class="una-columna">
+                <textarea name="your-input-iii" id="your-input-iii" placeholder="Lorem ipsum"></textarea>
+            </fieldset><!--
+            --><fieldset class="una-columna">
                 <button class="button button-white">{{data.bvi_button_text}}</button>
             </fieldset>
         </form>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WpService } from '../../../services/wp/wp.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,8 @@ import { WpService } from '../../../services/wp/wp.service';
 })
 export class HomeComponent implements OnInit {
 
-  data: any[] = [];
+  data = [];
+  slideConfig = {"slidesToShow": 5, "slidesToScroll": 1, "centerMode": true};
 
   constructor(protected wpService: WpService) { }
 
@@ -24,6 +26,25 @@ export class HomeComponent implements OnInit {
       }
     );
 
+  }
+
+  
+  slickInit(e) {
+    var image_slide_center = $('.slick-center').find('img').attr('src');
+    $('#imagen-seleccionada').css('background-image', 'url("' + image_slide_center + '")');
+  }
+  
+  breakpoint(e) {
+    //console.log('breakpoint');
+  }
+  
+  afterChange(e) {
+    var image_slide_center = $('.slick-center').find('img').attr('src');
+    $('#imagen-seleccionada').css('background-image', 'url("' + image_slide_center + '")');
+  }
+  
+  beforeChange(e) {
+    //console.log('beforeChange');
   }
 
 }

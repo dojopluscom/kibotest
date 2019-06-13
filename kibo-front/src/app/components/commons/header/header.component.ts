@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WpService } from '../../../services/wp/wp.service';
 
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -22,6 +24,14 @@ export class HeaderComponent implements OnInit {
                     console.error(error);
                 }
         );
+
+        $(window).on('scroll', function(){
+            if ( $(window).scrollTop() > 0 ){
+                $('header').addClass('menu-fixed');
+            } else {
+                $('header').removeClass('menu-fixed');
+            }
+        });
 
     }
 

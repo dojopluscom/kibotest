@@ -32,10 +32,16 @@ html, body {
 }
 
 .text-title {
+
+    font-size: 50px;
     font-family: 'Poppins-Light';
     strong {
         font-family: 'Poppins-Black';
     }
+}
+
+.text-subtitle {
+    font-size: 17px;
 }
 
 .button {
@@ -53,6 +59,7 @@ html, body {
 
     &.button-white {
         background-color: #FFFFFF;
+        color: #3A3A3A;
     }
     &.button-yellow {
         background-color: #F2C478;
@@ -63,16 +70,65 @@ html, body {
 
 .columns {
     vertical-align: top;
-
+    box-sizing: border-box;
     &.columns-two {
         width: 50%;
         display: inline-block;
     }
 
     &.columns-left {
-
+        padding-right: 10px;
     }
     &.columns-right {
+        padding-left: 10px;
+    }
+}
 
+form {
+    fieldset {
+        border: 0px solid;
+        margin: 10px 0;
+        padding: 0px;
+        box-sizing: border-box;
+        display: inline-block;
+
+        &.dos-columnas {
+            width: 50%;
+            &:nth-of-type(2n+1) { 
+                padding-right: 10px;
+            }
+            &:nth-of-type(2n+2) { 
+                padding-left: 10px;
+            }
+        }
+        &.una-columna {
+            width: 100%;
+        }
+
+
+
+        input,textarea {
+            width: 100%;
+            border: 0px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 5px 10px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 17px;
+            color: #3D3D3D;
+            letter-spacing: 0;
+        }
+
+        textarea {
+            height: 170px;
+            resize: none;
+        }
+    }
+}
+
+footer {
+    a {
+        color: #FFFFFF;
     }
 }
