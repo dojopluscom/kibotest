@@ -47,15 +47,21 @@
 <section id="home-bloque-5" class="fullwidth-section">
 
     <div class="container">
-        <div class="text-title" [innerHTML]="data.bv_titulo"></div>
-        <div class="text-subtitle">{{data.bv_subtitulo}}</div>
-        <div class="text-content" [innerHTML]="data.bv_texto"></div>
-        <a class="button" href="#">{{data.bv_button_text}}</a>
+        <div class="columns columns-two columns-left">
+            <div class="text-title" [innerHTML]="data.bv_titulo"></div>
+            <div class="text-subtitle">{{data.bv_subtitulo}}</div>
+            <div class="text-content" [innerHTML]="data.bv_texto"></div>
+            <a class="button button-yellow" href="#">{{data.bv_button_text}}</a>
+        </div><!--
+        --><div class="columns columns-two columns-right">
+            <div id="imagen-bloque" [ngStyle]="{'background-image':'url(' + data.bv_imagen + ')'}" ></div>
+        </div>
+
     </div>
 
 </section>
 
-<section id="home-bloque-5" class="fullwidth-section">
+<section id="home-bloque-6" class="fullwidth-section">
 
     <div id="formulario-container" class="container">
         <div class="text-title" [innerHTML]="data.bvi_titulo"></div>

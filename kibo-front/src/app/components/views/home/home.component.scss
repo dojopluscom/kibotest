@@ -187,3 +187,77 @@ section {
 
 
 }
+/*
+background: #FBFBFB;
+/* Sketch doesnt export pattern fills at this point */
+/* font-family: ArialMT;
+font-size: 12px;
+color: #626262;
+letter-spacing: 0.36px;
+text-align: left;
+line-height: 21.88px;
+font-family: OpenSans;
+font-size: 16px;
+color: #2C2C2C;
+letter-spacing: -0.1px;
+text-align: left;
+line-height: 24.88px;
+
+<section id="home-bloque-5" class="fullwidth-section">
+
+    <div class="container">
+        <div class="columns columns-left">
+            <div class="text-title" [innerHTML]="data.bv_titulo"></div>
+            <div class="text-subtitle">{{data.bv_subtitulo}}</div>
+            <div class="text-content" [innerHTML]="data.bv_texto"></div>
+            <a class="button" href="#">{{data.bv_button_text}}</a>
+        </div>
+        <div class="columns columns-right">
+            <img src="" />
+        </div>
+
+    </div>
+
+</section>
+
+*/
+
+
+#home-bloque-5 {
+    background: #FBFBFB;
+    padding: 50px 0;
+    .text-title {
+        font-size: 50px;
+    }
+    .text-subtitle {
+        font-family: 'OpenSans-Regular';
+        font-size: 16px;
+        color: #2C2C2C;
+        letter-spacing: 0px;
+        text-align: left;
+        line-height: 25px;
+        margin-top: 30px;
+    }
+    .text-content {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        color: #626262;
+        letter-spacing: 0.35px;
+        text-align: left;
+        line-height: 22px;
+        margin-top: 30px;
+    }
+    .button {
+        margin-top: 30px;
+    }
+    #imagen-bloque {
+        width: 630px;
+        height: 430px;
+        background: none no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+}

@@ -49,8 +49,30 @@ html, body {
     font-family: Helvetica;
     font-size: 17px;
     color: #3A3A3A;
-    
+    text-decoration: none;
+
     &.button-white {
         background-color: #FFFFFF;
+    }
+    &.button-yellow {
+        background-color: #F2C478;
+        color: #FFFFFF;
+    }
+}
+
+
+.columns {
+    vertical-align: top;
+
+    &.columns-two {
+        width: 50%;
+        display: inline-block;
+    }
+
+    &.columns-left {
+
+    }
+    &.columns-right {
+
     }
 }
